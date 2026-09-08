@@ -1,0 +1,209 @@
+[
+  {
+    "test_id": "TEST_001",
+    "question": "Can I patent a classical Ayurvedic formulation directly extracted from the Charaka Samhita?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Classical Formulation",
+    "expected_source": "The Patents Act, 1970",
+    "expected_section": "Section 3(p)",
+    "expected_answer_elements": [
+      "Traditional knowledge is non-patentable under Section 3(p)",
+      "Traditional Knowledge Digital Library (TKDL) serves as defensive prior art",
+      "Mere aggregation or known traditional properties cannot be patented"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_002",
+    "question": "If I combine Ashwagandha and Brahmi and observe an enhanced therapeutic effect, is it patentable?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Patent-or-Proprietary Medicine",
+    "expected_source": "The Patents Act, 1970",
+    "expected_section": "Section 3(e)",
+    "expected_answer_elements": [
+      "Mere admixtures resulting only in aggregation of properties are barred under Section 3(e)",
+      "Must prove non-obvious synergistic effect through empirical comparative data",
+      "Must also satisfy novelty and overcome Section 3(p) TK scrutiny"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_003",
+    "question": "Do I need approval from the National Biodiversity Authority (NBA) before applying for a patent on an Indian herb extract?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Phytopharmaceutical / Proprietary",
+    "expected_source": "Biological Diversity Act, 2002 / Biological Diversity (Amendment) Act, 2023",
+    "expected_section": "Section 6",
+    "expected_answer_elements": [
+      "Section 6 mandates prior approval from the NBA before applying for any IPR based on Indian biological resources",
+      "Requires Access and Benefit Sharing (ABS) agreement and mandatory disclosure"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_004",
+    "question": "Can a foreign entity access Indian medicinal biological resources for Ayurvedic commercial research without permission?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Biological Resource Access",
+    "expected_source": "Biological Diversity Act, 2002 / Biological Diversity (Amendment) Act, 2023",
+    "expected_section": "Section 3",
+    "expected_answer_elements": [
+      "Non-citizens and foreign-controlled entities must obtain prior written approval from the NBA",
+      "Direct collection or commercial utilization without approval is prohibited"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_005",
+    "question": "Under what provisions can an Ayurvedic food supplement be regulated as Ayurveda-Aahar rather than a drug?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Ayurveda-Aahar / Nutraceutical",
+    "expected_source": "Food Safety and Standards (Ayurveda Aahar) Regulations, 2022",
+    "expected_section": "Regulation 3 & Schedule A",
+    "expected_answer_elements": [
+      "Must be prepared in accordance with recipes or processes described in First Schedule authoritative texts",
+      "Cannot include synthetic vitamins or minerals",
+      "Cannot claim therapeutic or preventive cure properties like medicines"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_006",
+    "question": "Where are the authoritative Ayurvedic books listed under the Drugs and Cosmetics Act for classical formulations?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Classical Formulation",
+    "expected_source": "Drugs and Cosmetics Act, 1940",
+    "expected_section": "The First Schedule",
+    "expected_answer_elements": [
+      "The First Schedule explicitly enumerates authoritative Ayurvedic, Siddha, and Unani texts",
+      "Includes treatises such as Charaka Samhita, Sushruta Samhita, and Ashtanga Hridaya"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_007",
+    "question": "What evidence of safety and efficacy is required for licensing a Patent or Proprietary Ayurvedic medicine with non-classical ingredients?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Patent-or-Proprietary Medicine",
+    "expected_source": "Drugs and Cosmetics Rules, 1945",
+    "expected_section": "Rule 158-B",
+    "expected_answer_elements": [
+      "Rule 158-B outlines regulatory proof of safety and effectiveness",
+      "Requires published literature or clinical safety trials depending on whether ingredients deviate from classical texts"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_008",
+    "question": "Are registered local AYUSH practitioners exempt from intimating State Biodiversity Boards under the amended BD Act?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Traditional Practitioner",
+    "expected_source": "Biological Diversity (Amendment) Act, 2023",
+    "expected_section": "Section 7",
+    "expected_answer_elements": [
+      "Local registered AYUSH practitioners and codified traditional knowledge holders are granted specific exemptions from prior intimation for subsistence use"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_009",
+    "question": "Can I protect a unique Ayurvedic brand name and packaging logo?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Commercial Brand",
+    "expected_source": "The Trade Marks Act, 1999 & The Designs Act, 2000",
+    "expected_section": "Section 9 / Section 2(d)",
+    "expected_answer_elements": [
+      "Distinctive brand names can be registered as Trademarks under the Trade Marks Act 1999",
+      "Generic classical Sanskrit names (e.g., Chyawanprash) cannot be monopolized under Section 9 descriptive grounds",
+      "Aesthetic packaging shape can be protected under the Designs Act 2000"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_010",
+    "question": "Does patent disclosure in India require citing the geographic origin of biological materials?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Patent Filing Compliance",
+    "expected_source": "The Patents Act, 1970",
+    "expected_section": "Section 10(4)(d)(ii)",
+    "expected_answer_elements": [
+      "Specification must disclose the source and geographical origin of any biological material used",
+      "Non-disclosure constitutes valid grounds for patent opposition or revocation under Section 64"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_011",
+    "question": "How does the WIPO 2024 Treaty on Genetic Resources protect against biopiracy internationally?",
+    "language": "en",
+    "jurisdiction": "International",
+    "product_category": "International IPR",
+    "expected_source": "WIPO Treaty on Intellectual Property, Genetic Resources and Associated Traditional Knowledge (2024)",
+    "expected_section": "Article 3 (Mandatory Disclosure)",
+    "expected_answer_elements": [
+      "Mandates patent applicants worldwide to disclose country of origin of genetic resources and associated traditional knowledge",
+      "Establishes information systems to verify prior art and prevent wrongful patent grants abroad"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_012",
+    "question": "क्या मैं चरक संहिता में वर्णित शास्त्रीय आयुर्वेदिक योग का पेटेंट प्राप्त कर सकता हूँ?",
+    "language": "hi",
+    "jurisdiction": "India",
+    "product_category": "Classical Formulation",
+    "expected_source": "The Patents Act, 1970",
+    "expected_section": "Section 3(p)",
+    "expected_answer_elements": [
+      "पारंपरिक ज्ञान पर आधारित योग धारा 3(p) के तहत गैर-पेटेंट योग्य हैं",
+      "TKDL डेटाबेस का उपयोग पूर्व-कला (prior art) के रूप में किया जाता है"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_013",
+    "question": "Can I claim on my Ayurvedic syrup label that it guarantees a 100% cure for cancer?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Advertisement Compliance",
+    "expected_source": "Drugs and Magic Remedies (Objectionable Advertisements) Act, 1954",
+    "expected_section": "Section 3 & Schedule",
+    "expected_answer_elements": [
+      "Strictly prohibited from advertising cures for specific diseases listed in the Schedule (such as cancer, diabetes, epilepsy)",
+      "Violation constitutes a punishable criminal offense"
+    ],
+    "expected_abstention_behavior": false
+  },
+  {
+    "test_id": "TEST_014",
+    "question": "Can I get an income tax rebate under Section 80C for purchasing Ayurvedic company shares?",
+    "language": "en",
+    "jurisdiction": "India",
+    "product_category": "Out-of-Scope",
+    "expected_source": "None",
+    "expected_section": "None",
+    "expected_answer_elements": [],
+    "expected_abstention_behavior": true
+  },
+  {
+    "test_id": "TEST_015",
+    "question": "What is the capital gains tax on exporting unrefined crude oil to Germany?",
+    "language": "en",
+    "jurisdiction": "International",
+    "product_category": "Out-of-Scope",
+    "expected_source": "None",
+    "expected_section": "None",
+    "expected_answer_elements": [],
+    "expected_abstention_behavior": true
+  }
+]
