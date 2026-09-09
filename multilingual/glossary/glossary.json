@@ -1,0 +1,2138 @@
+[
+  {
+    "term_id": "PAT_001",
+    "english": "Patent",
+    "hindi": "पेटेंट",
+    "category": "PATENT",
+    "aliases_en": [],
+    "aliases_hi": [],
+    "do_not_translate": false,
+    "context": "intellectual_property",
+    "explanation_en": "A legal right granted for an invention for a limited period.",
+    "explanation_hi": "किसी आविष्कार के लिए सीमित अवधि तक दिया जाने वाला कानूनी अधिकार।"
+  },
+  {
+    "term_id": "PAT_002",
+    "english": "Patent Application",
+    "hindi": "पेटेंट आवेदन",
+    "category": "PATENT",
+    "aliases_en": [
+      "Patent Filing"
+    ],
+    "aliases_hi": [
+      "पेटेंट दाखिल करना"
+    ],
+    "do_not_translate": false,
+    "context": "patent_application",
+    "explanation_en": "A formal request submitted to obtain patent protection for an invention.",
+    "explanation_hi": "किसी आविष्कार के लिए पेटेंट संरक्षण प्राप्त करने हेतु प्रस्तुत औपचारिक अनुरोध।"
+  },
+  {
+    "term_id": "PAT_003",
+    "english": "Prior Art",
+    "hindi": "पूर्व कला",
+    "category": "PATENT",
+    "aliases_en": [
+      "Existing Technology",
+      "Earlier Art"
+    ],
+    "aliases_hi": [],
+    "do_not_translate": false,
+    "context": "patent_search",
+    "explanation_en": "Information or technology publicly available before the relevant patent filing or priority date.",
+    "explanation_hi": "संबंधित पेटेंट फाइलिंग या प्राथमिकता तिथि से पहले सार्वजनिक रूप से उपलब्ध जानकारी या तकनीक।"
+  },
+  {
+    "term_id": "PAT_004",
+    "english": "Novelty",
+    "hindi": "नवीनता",
+    "category": "PATENT",
+    "aliases_en": [
+      "Newness"
+    ],
+    "aliases_hi": [],
+    "do_not_translate": false,
+    "context": "patentability",
+    "explanation_en": "The requirement that an invention is new and not already disclosed in prior art.",
+    "explanation_hi": "यह आवश्यकता कि आविष्कार नया हो और पूर्व कला में पहले से प्रकट न हुआ हो।"
+  },
+  {
+    "term_id": "PAT_005",
+    "english": "Inventive Step",
+    "hindi": "आविष्कारक कदम",
+    "category": "PATENT",
+    "aliases_en": [
+      "Non-obviousness"
+    ],
+    "aliases_hi": [],
+    "do_not_translate": false,
+    "context": "patentability",
+    "explanation_en": "A technical advance that is not obvious to a skilled person in the relevant field.",
+    "explanation_hi": "ऐसा तकनीकी सुधार जो संबंधित क्षेत्र के कुशल व्यक्ति के लिए स्पष्ट न हो।"
+  },
+  {
+    "term_id": "PAT_006",
+    "english": "Geographical Indication",
+    "hindi": "भौगोलिक संकेतक",
+    "category": "INTELLECTUAL_PROPERTY",
+    "aliases_en": [
+      "GI",
+      "Appellation of Origin"
+    ],
+    "aliases_hi": [
+      "जीआई टैग",
+      "भौगोलिक उपदर्शन"
+    ],
+    "do_not_translate": false,
+    "context": "protection of goods based on their specific geographical origin",
+    "explanation_en": "A sign identifying goods whose qualities or reputation are linked to a specific geographical origin.",
+    "explanation_hi": "ऐसा संकेतक जो उन वस्तुओं की पहचान करता है जिनकी गुणवत्ता या प्रतिष्ठा किसी विशिष्ट भौगोलिक क्षेत्र से जुड़ी होती है।"
+  },
+  {
+    "term_id": "PAT_007",
+    "english": "Copyright",
+    "hindi": "कॉपीराइट",
+    "category": "INTELLECTUAL_PROPERTY",
+    "aliases_en": [
+      "Author's Right"
+    ],
+    "aliases_hi": [
+      "प्रतिलिप्याधिकार"
+    ],
+    "do_not_translate": false,
+    "context": "protection of literary and artistic works",
+    "explanation_en": "Legal protection for eligible original literary, artistic, and creative works.",
+    "explanation_hi": "पात्र मौलिक साहित्यिक, कलात्मक और रचनात्मक कार्यों के लिए कानूनी संरक्षण।"
+  },
+  {
+    "term_id": "PAT_008",
+    "english": "Trademark",
+    "hindi": "ट्रेडमार्क",
+    "category": "INTELLECTUAL_PROPERTY",
+    "aliases_en": [
+      "Brand",
+      "Mark"
+    ],
+    "aliases_hi": [
+      "व्यापार चिह्न"
+    ],
+    "do_not_translate": false,
+    "context": "brand identity and logos",
+    "explanation_en": "A name, symbol, or sign that distinguishes goods or services from others.",
+    "explanation_hi": "ऐसा नाम, प्रतीक या चिन्ह जो वस्तुओं या सेवाओं को दूसरों से अलग पहचानता है।"
+  },
+  {
+    "term_id": "PAT_009",
+    "english": "Trade Secret",
+    "hindi": "व्यापार रहस्य",
+    "category": "INTELLECTUAL_PROPERTY",
+    "aliases_en": [
+      "Confidential Information",
+      "Proprietary Information"
+    ],
+    "aliases_hi": [
+      "गोपनीय जानकारी",
+      "ट्रेड सीक्रेट"
+    ],
+    "do_not_translate": false,
+    "context": "protection of confidential business information",
+    "explanation_en": "Confidential business information protected because it has commercial value.",
+    "explanation_hi": "गोपनीय व्यावसायिक जानकारी जिसे उसके वाणिज्यिक मूल्य के कारण सुरक्षित रखा जाता है।"
+  },
+  {
+    "term_id": "PAT_0010",
+    "english": "Infringement",
+    "hindi": "उल्लंघन",
+    "category": "IP_ENFORCEMENT",
+    "aliases_en": [
+      "Violation",
+      "Breach",
+      "Piracy"
+    ],
+    "aliases_hi": [
+      "अतिक्रमण",
+      "अधिकार-हनन"
+    ],
+    "do_not_translate": false,
+    "context": "violation of intellectual property rights",
+    "explanation_en": "An unauthorized act that violates an intellectual property right.",
+    "explanation_hi": "बौद्धिक संपदा अधिकार का उल्लंघन करने वाला अनधिकृत कार्य।"
+  },
+  {
+    "term_id": "PAT_0011",
+    "english": "Dosha",
+    "hindi": "दोष",
+    "category": "AYURVEDIC_PRINCIPLES",
+    "aliases_en": [
+      "Bio-energy",
+      "Bodily Humor"
+    ],
+    "aliases_hi": [
+      "त्रिदोष",
+      "शारीरिक दोष"
+    ],
+    "do_not_translate": true,
+    "context": "fundamental bio-elements (Vata, Pitta, Kapha) that govern the body",
+    "explanation_en": "An Ayurvedic concept of Vata, Pitta, and Kapha as functional principles.",
+    "explanation_hi": "वात, पित्त और कफ को कार्यात्मक सिद्धांतों के रूप में समझाने वाली आयुर्वेदिक अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0012",
+    "english": "Prakriti",
+    "hindi": "प्रकृति",
+    "category": "CONSTITUTION",
+    "aliases_en": [
+      "Body Constitution",
+      "Mind-Body Type",
+      "Innate Nature"
+    ],
+    "aliases_hi": [
+      "शारीरिक प्रकृति",
+      "स्वभाव"
+    ],
+    "do_not_translate": true,
+    "context": "an individual's unique baseline physical and psychological makeup",
+    "explanation_en": "An individual's characteristic Ayurvedic physical and psychological constitution.",
+    "explanation_hi": "व्यक्ति की विशिष्ट आयुर्वेदिक शारीरिक और मानसिक प्रकृति।"
+  },
+  {
+    "term_id": "PAT_0013",
+    "english": "Agni",
+    "hindi": "अग्नि",
+    "category": "PHYSIOLOGY",
+    "aliases_en": [
+      "Digestive Fire",
+      "Metabolic Fire"
+    ],
+    "aliases_hi": [
+      "जठराग्नि",
+      "पाचक अग्नि"
+    ],
+    "do_not_translate": true,
+    "context": "the body's metabolic and digestive processes essential for health",
+    "explanation_en": "An Ayurvedic concept associated with digestion and metabolism.",
+    "explanation_hi": "पाचन और चयापचय से संबंधित आयुर्वेदिक अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0014",
+    "english": "Panchakarma",
+    "hindi": "पंचकर्म",
+    "category": "TREATMENT_AND_THERAPY",
+    "aliases_en": [
+      "Detoxification",
+      "Five-fold Purification",
+      "Bio-cleansing"
+    ],
+    "aliases_hi": [
+      "शोधन कर्म"
+    ],
+    "do_not_translate": true,
+    "context": "comprehensive cleansing and detoxification therapies",
+    "explanation_en": "A group of classical Ayurvedic cleansing and purification procedures.",
+    "explanation_hi": "शास्त्रीय आयुर्वेद में वर्णित शोधन और शुद्धिकरण प्रक्रियाओं का समूह।"
+  },
+  {
+    "term_id": "PAT_0015",
+    "english": "Rasayana",
+    "hindi": "रसायन",
+    "category": "THERAPEUTICS",
+    "aliases_en": [
+      "Rejuvenation Therapy",
+      "Anti-aging",
+      "Vitalizer"
+    ],
+    "aliases_hi": [
+      "रसायन चिकित्सा",
+      "पुनर्यौवन"
+    ],
+    "do_not_translate": true,
+    "context": "treatments and herbal formulations focused on vitality, immunity, and longevity",
+    "explanation_en": "An Ayurvedic therapeutic concept associated with nourishment, vitality, rejuvenation, and longevity.",
+    "explanation_hi": "पोषण, जीवनशक्ति, पुनर्यौवन और दीर्घायु से संबंधित आयुर्वेदिक चिकित्सीय अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0016",
+    "english": "Divisional Application",
+    "hindi": "प्रभागीय आवेदन",
+    "category": "PATENT_PROCEDURE",
+    "aliases_en": [
+      "Divided Application",
+      "Child Patent"
+    ],
+    "aliases_hi": [
+      "विभाजित आवेदन"
+    ],
+    "do_not_translate": false,
+    "context": "filing a separate patent application carved out from an existing parent application when it encompasses more than one distinct invention",
+    "explanation_en": "A separate patent application divided from an earlier application for distinct subject matter.",
+    "explanation_hi": "पहले के आवेदन से अलग विषय-वस्तु के लिए विभाजित किया गया अलग पेटेंट आवेदन।"
+  },
+  {
+    "term_id": "PAT_0017",
+    "english": "Biopiracy",
+    "hindi": "जैविक चोरी",
+    "category": "INTELLECTUAL_PROPERTY_THREAT",
+    "aliases_en": [
+      "Biological Theft",
+      "Bio-appropriation"
+    ],
+    "aliases_hi": [
+      "बायोपायरेसी",
+      "जैव-चौर्य",
+      "जैविक डकैती"
+    ],
+    "do_not_translate": false,
+    "context": "the unauthorized appropriation and commercialization of traditional knowledge and biological resources without compensation",
+    "explanation_en": "Unauthorized use or commercialization of biological resources or associated traditional knowledge.",
+    "explanation_hi": "जैविक संसाधनों या संबंधित पारंपरिक ज्ञान का अनधिकृत उपयोग या व्यावसायीकरण।"
+  },
+  {
+    "term_id": "PAT_0018",
+    "english": "Traditional Formulation",
+    "hindi": "पारंपरिक योग",
+    "category": "TK_DOCUMENTATION",
+    "aliases_en": [
+      "Classical Preparation",
+      "Medicinal Recipe",
+      "Polyherbal Formulation"
+    ],
+    "aliases_hi": [
+      "शास्त्रीय योग",
+      "पारंपरिक नुस्खा",
+      "औषधीय मिश्रण"
+    ],
+    "do_not_translate": false,
+    "context": "specific combinations of medicinal ingredients described in ancient texts that are translated and classified in the TKDL database",
+    "explanation_en": "A medicinal preparation or ingredient combination described in traditional knowledge or classical texts.",
+    "explanation_hi": "पारंपरिक ज्ञान या शास्त्रीय ग्रंथों में वर्णित औषधीय तैयारी या घटकों का संयोजन।"
+  },
+  {
+    "term_id": "PAT_0019",
+    "english": "Pharmacopoeia",
+    "hindi": "भेषज संहिता",
+    "category": "TK_LITERATURE",
+    "aliases_en": [
+      "Materia Medica",
+      "Dispensatory",
+      "Classical Text"
+    ],
+    "aliases_hi": [
+      "औषधकोश",
+      "औषध-ग्रंथ"
+    ],
+    "do_not_translate": false,
+    "context": "authoritative treatises or ancient scriptures containing exhaustive details of traditional drugs, their properties, and therapeutic uses",
+    "explanation_en": "An authoritative reference describing medicines, substances, properties, preparation, or quality standards.",
+    "explanation_hi": "औषधियों, पदार्थों, उनके गुणों, निर्माण या गुणवत्ता मानकों का प्रामाणिक संदर्भ।"
+  },
+  {
+    "term_id": "PAT_0020",
+    "english": "Biological Resource",
+    "hindi": "जैविक संसाधन",
+    "category": "BIO_DIVERSITY",
+    "aliases_en": [
+      "Bio-resource",
+      "Genetic Resource",
+      "Botanical Resource"
+    ],
+    "aliases_hi": [
+      "जैव संसाधन",
+      "आनुवंशिक संसाधन"
+    ],
+    "do_not_translate": false,
+    "context": "plants, herbs, and other naturally occurring materials that form the basis of traditional medicine systems like Ayurveda, Unani, and Siddha",
+    "explanation_en": "A biological material or organism of actual or potential value.",
+    "explanation_hi": "ऐसा जैविक पदार्थ या जीव जिसका वर्तमान या संभावित मूल्य हो।"
+  },
+  {
+    "term_id": "PAT_0021",
+    "english": "Renewal Fee",
+    "hindi": "नवीकरण शुल्क",
+    "category": "PATENT_MAINTENANCE",
+    "aliases_en": [
+      "Maintenance Fee",
+      "Annuity"
+    ],
+    "aliases_hi": [
+      "अनुरक्षण शुल्क",
+      "वार्षिक शुल्क"
+    ],
+    "do_not_translate": false,
+    "context": "periodic payments required to keep a granted patent or intellectual property right in force",
+    "explanation_en": "A periodic payment required to keep certain intellectual property rights in force.",
+    "explanation_hi": "कुछ बौद्धिक संपदा अधिकारों को लागू रखने के लिए किया जाने वाला आवधिक भुगतान।"
+  },
+  {
+    "term_id": "PAT_0022",
+    "english": "Industrial Applicability",
+    "hindi": "औद्योगिक प्रयोज्यता",
+    "category": "PATENTABILITY",
+    "aliases_en": [
+      "Utility",
+      "Usefulness"
+    ],
+    "aliases_hi": [
+      "उपयोगिता",
+      "औद्योगिक उपयोग"
+    ],
+    "do_not_translate": false,
+    "context": "the requirement that an invention can be made or used in an industry",
+    "explanation_en": "The requirement that an invention can be made or used in industry.",
+    "explanation_hi": "यह आवश्यकता कि किसी आविष्कार को उद्योग में बनाया या उपयोग किया जा सके।"
+  },
+  {
+    "term_id": "PAT_0023",
+    "english": "Claim",
+    "hindi": "दावा",
+    "category": "PATENT_DOCUMENTATION",
+    "aliases_en": [
+      "Patent Claim",
+      "Scope of Protection"
+    ],
+    "aliases_hi": [
+      "अधिकार का दावा"
+    ],
+    "do_not_translate": false,
+    "context": "the specific legal boundaries of the invention's protection",
+    "explanation_en": "The part of a patent defining the subject matter and legal scope of protection.",
+    "explanation_hi": "पेटेंट का वह भाग जो संरक्षण की विषय-वस्तु और कानूनी सीमा निर्धारित करता है।"
+  },
+  {
+    "term_id": "PAT_0024",
+    "english": "Specification",
+    "hindi": "विनिर्देश",
+    "category": "PATENT_DOCUMENTATION",
+    "aliases_en": [
+      "Patent Specification",
+      "Description"
+    ],
+    "aliases_hi": [
+      "विवरण",
+      "विशिष्टता"
+    ],
+    "do_not_translate": false,
+    "context": "a detailed description of the invention and how to make/use it",
+    "explanation_en": "A patent document that describes the invention and its technical details.",
+    "explanation_hi": "वह पेटेंट दस्तावेज जिसमें आविष्कार और उसकी तकनीकी जानकारी का वर्णन होता है।"
+  },
+  {
+    "term_id": "PAT_0025",
+    "english": "Assignee",
+    "hindi": "समनुदेशिती",
+    "category": "IP_OWNERSHIP",
+    "aliases_en": [
+      "Transferee",
+      "Owner"
+    ],
+    "aliases_hi": [
+      "असाइनी",
+      "स्वत्वाधिकारी"
+    ],
+    "do_not_translate": false,
+    "context": "the entity or person to whom the patent rights have been legally transferred",
+    "explanation_en": "A person or entity to whom intellectual property rights have been legally transferred.",
+    "explanation_hi": "वह व्यक्ति या संस्था जिसे बौद्धिक संपदा अधिकार कानूनी रूप से हस्तांतरित किए गए हों।"
+  },
+  {
+    "term_id": "PAT_0026",
+    "english": "License",
+    "hindi": "अनुज्ञप्ति",
+    "category": "IP_COMMERCIALIZATION",
+    "aliases_en": [
+      "Permit",
+      "Authorization"
+    ],
+    "aliases_hi": [
+      "लाइसेंस",
+      "अधिकार पत्र"
+    ],
+    "do_not_translate": false,
+    "context": "legal permission given by the IP owner to another party to use the IP",
+    "explanation_en": "Legal permission allowing another party to use intellectual property under agreed conditions.",
+    "explanation_hi": "सहमति की शर्तों के तहत किसी अन्य पक्ष को बौद्धिक संपदा उपयोग करने की कानूनी अनुमति।"
+  },
+  {
+    "term_id": "PAT_0027",
+    "english": "Prosecution",
+    "hindi": "अभियोजन",
+    "category": "PATENT_PROCEDURE",
+    "aliases_en": [
+      "Patent Prosecution",
+      "Examination Process"
+    ],
+    "aliases_hi": [
+      "पेटेंट प्रक्रिया"
+    ],
+    "do_not_translate": false,
+    "context": "the interaction between the patent applicant and the patent office",
+    "explanation_en": "The process of communicating with a patent office during application examination.",
+    "explanation_hi": "पेटेंट आवेदन की जांच के दौरान पेटेंट कार्यालय के साथ संवाद करने की प्रक्रिया।"
+  },
+  {
+    "term_id": "PAT_0028",
+    "english": "Grant",
+    "hindi": "अनुदान",
+    "category": "PATENT_STATUS",
+    "aliases_en": [
+      "Patent Grant",
+      "Issuance"
+    ],
+    "aliases_hi": [
+      "मंजूरी",
+      "निर्गमन"
+    ],
+    "do_not_translate": false,
+    "context": "the official approval and conferring of IP rights",
+    "explanation_en": "The official act of conferring patent rights after applicable requirements are met.",
+    "explanation_hi": "लागू आवश्यकताएँ पूरी होने के बाद पेटेंट अधिकार प्रदान करने की आधिकारिक प्रक्रिया।"
+  },
+  {
+    "term_id": "PAT_0029",
+    "english": "Revocation",
+    "hindi": "प्रतिसंहरण",
+    "category": "IP_ENFORCEMENT",
+    "aliases_en": [
+      "Cancellation",
+      "Invalidation"
+    ],
+    "aliases_hi": [
+      "रद्द करना",
+      "निरस्तीकरण"
+    ],
+    "do_not_translate": false,
+    "context": "the legal cancellation of a granted patent",
+    "explanation_en": "The legal cancellation or withdrawal of a granted patent.",
+    "explanation_hi": "प्रदान किए गए पेटेंट को कानूनी रूप से रद्द या वापस करने की प्रक्रिया।"
+  },
+  {
+    "term_id": "PAT_0030",
+    "english": "Opposition",
+    "hindi": "विरोध",
+    "category": "PATENT_PROCEDURE",
+    "aliases_en": [
+      "Pre-grant Opposition",
+      "Post-grant Opposition"
+    ],
+    "aliases_hi": [
+      "आपत्ति"
+    ],
+    "do_not_translate": false,
+    "context": "a procedure where third parties challenge the validity of a patent",
+    "explanation_en": "A legal procedure for challenging the grant or validity of a patent.",
+    "explanation_hi": "पेटेंट के अनुदान या वैधता को चुनौती देने की कानूनी प्रक्रिया।"
+  },
+  {
+    "term_id": "PAT_0031",
+    "english": "Royalty",
+    "hindi": "स्वामिस्व",
+    "category": "IP_COMMERCIALIZATION",
+    "aliases_en": [
+      "Compensation",
+      "Licensing Fee"
+    ],
+    "aliases_hi": [
+      "रॉयल्टी",
+      "अधिकार शुल्क"
+    ],
+    "do_not_translate": false,
+    "context": "payment made to the IP owner for the right to use the asset",
+    "explanation_en": "A payment made to a rights holder for authorized use of intellectual property.",
+    "explanation_hi": "बौद्धिक संपदा के अधिकृत उपयोग के बदले अधिकार-धारक को किया जाने वाला भुगतान।"
+  },
+  {
+    "term_id": "PAT_0032",
+    "english": "Patentee",
+    "hindi": "एकस्वधारी",
+    "category": "IP_OWNERSHIP",
+    "aliases_en": [
+      "Patent Holder",
+      "Patent Owner"
+    ],
+    "aliases_hi": [
+      "पेटेंट धारक"
+    ],
+    "do_not_translate": false,
+    "context": "the person or entity that owns the patent",
+    "explanation_en": "The person or entity holding rights in a granted patent.",
+    "explanation_hi": "वह व्यक्ति या संस्था जिसके पास प्रदान किए गए पेटेंट के अधिकार होते हैं।"
+  },
+  {
+    "term_id": "PAT_0033",
+    "english": "Priority Date",
+    "hindi": "प्राथमिकता तिथि",
+    "category": "PATENT_PROCEDURE",
+    "aliases_en": [
+      "Effective Date",
+      "First Filing Date"
+    ],
+    "aliases_hi": [
+      "अग्रता तिथि"
+    ],
+    "do_not_translate": false,
+    "context": "the first date a patent application is filed, establishing precedence",
+    "explanation_en": "The date used to establish priority for an invention under patent rules.",
+    "explanation_hi": "पेटेंट नियमों के अनुसार किसी आविष्कार की प्राथमिकता निर्धारित करने वाली तिथि।"
+  },
+  {
+    "term_id": "PAT_0034",
+    "english": "Public Domain",
+    "hindi": "सार्वजनिक क्षेत्र",
+    "category": "IP_STATUS",
+    "aliases_en": [
+      "Off-patent",
+      "Publicly Available"
+    ],
+    "aliases_hi": [
+      "सार्वजनिक डोमेन",
+      "सर्वसुलभ"
+    ],
+    "do_not_translate": false,
+    "context": "the status of works or inventions whose IP rights have expired or been forfeited",
+    "explanation_en": "Material not protected by applicable intellectual property rights or whose rights have ended.",
+    "explanation_hi": "ऐसी सामग्री जो लागू बौद्धिक संपदा अधिकारों से संरक्षित नहीं है या जिसके अधिकार समाप्त हो चुके हैं।"
+  },
+  {
+    "term_id": "PAT_0035",
+    "english": "Fair Use",
+    "hindi": "उचित उपयोग",
+    "category": "COPYRIGHT_LAW",
+    "aliases_en": [
+      "Fair Dealing",
+      "Permitted Use"
+    ],
+    "aliases_hi": [
+      "न्यायसंगत उपयोग"
+    ],
+    "do_not_translate": false,
+    "context": "legal doctrine permitting limited use of copyrighted material without permission",
+    "explanation_en": "A legal doctrine that may permit certain limited uses of copyrighted material.",
+    "explanation_hi": "एक कानूनी सिद्धांत जो कुछ परिस्थितियों में कॉपीराइट सामग्री के सीमित उपयोग की अनुमति दे सकता है।"
+  },
+  {
+    "term_id": "PAT_0036",
+    "english": "Counterfeit",
+    "hindi": "जालसाजी",
+    "category": "IP_ENFORCEMENT",
+    "aliases_en": [
+      "Fake",
+      "Knockoff",
+      "Forgery"
+    ],
+    "aliases_hi": [
+      "नकली",
+      "जाली"
+    ],
+    "do_not_translate": false,
+    "context": "an imitation made with the intent to deceive and infringe upon IP rights",
+    "explanation_en": "An unauthorized imitation made to resemble a genuine product.",
+    "explanation_hi": "वास्तविक उत्पाद जैसा दिखने के लिए बनाया गया अनधिकृत नकली उत्पाद।"
+  },
+  {
+    "term_id": "PAT_0037",
+    "english": "Plagiarism",
+    "hindi": "साहित्यिक चोरी",
+    "category": "COPYRIGHT_INFRINGEMENT",
+    "aliases_en": [
+      "Copying",
+      "Piracy"
+    ],
+    "aliases_hi": [
+      "ग्रंथचोरी",
+      "विचार-चौर्य"
+    ],
+    "do_not_translate": false,
+    "context": "the practice of taking someone else's work or ideas and passing them off as one's own",
+    "explanation_en": "Presenting another person's work or ideas as one's own without proper acknowledgment.",
+    "explanation_hi": "किसी अन्य व्यक्ति के कार्य या विचारों को उचित श्रेय के बिना अपना बताना।"
+  },
+  {
+    "term_id": "PAT_0038",
+    "english": "Utility Model",
+    "hindi": "उपयोगिता मॉडल",
+    "category": "INTELLECTUAL_PROPERTY",
+    "aliases_en": [
+      "Petty Patent",
+      "Innovation Patent"
+    ],
+    "aliases_hi": [
+      "लघु पेटेंट"
+    ],
+    "do_not_translate": false,
+    "context": "an IP right protecting inventions with a less stringent requirement than a standard patent",
+    "explanation_en": "A form of intellectual property protection for certain technical inventions in some jurisdictions.",
+    "explanation_hi": "कुछ न्यायक्षेत्रों में कुछ तकनीकी आविष्कारों के लिए उपलब्ध बौद्धिक संपदा संरक्षण का एक रूप।"
+  },
+  {
+    "term_id": "PAT_0039",
+    "english": "Industrial Design",
+    "hindi": "औद्योगिक डिज़ाइन",
+    "category": "INTELLECTUAL_PROPERTY",
+    "aliases_en": [
+      "Design Right",
+      "Design Patent"
+    ],
+    "aliases_hi": [
+      "औद्योगिक रूपरेखा"
+    ],
+    "do_not_translate": false,
+    "context": "protection of the aesthetic and visual aspects of an article",
+    "explanation_en": "Protection for the visual or ornamental features of a product.",
+    "explanation_hi": "किसी उत्पाद की दृश्य या सजावटी विशेषताओं का कानूनी संरक्षण।"
+  },
+  {
+    "term_id": "PAT_0040",
+    "english": "Disclosure",
+    "hindi": "प्रकटीकरण",
+    "category": "PATENT_REQUIREMENT",
+    "aliases_en": [
+      "Public Disclosure",
+      "Publication"
+    ],
+    "aliases_hi": [
+      "खुलासा",
+      "सार्वजनिक करना"
+    ],
+    "do_not_translate": false,
+    "context": "making the details of an invention known to the public",
+    "explanation_en": "Making information about an invention available to others or the public.",
+    "explanation_hi": "किसी आविष्कार की जानकारी को अन्य लोगों या जनता के लिए उपलब्ध कराना।"
+  },
+  {
+    "term_id": "PAT_0041",
+    "english": "Abstract",
+    "hindi": "सारांश",
+    "category": "PATENT_DOCUMENTATION",
+    "aliases_en": [
+      "Summary",
+      "Brief Description"
+    ],
+    "aliases_hi": [
+      "संक्षेप",
+      "सार"
+    ],
+    "do_not_translate": false,
+    "context": "a concise summary of the technical disclosure in a patent document",
+    "explanation_en": "A short summary of the technical content of a patent document.",
+    "explanation_hi": "पेटेंट दस्तावेज की तकनीकी विषय-वस्तु का संक्षिप्त विवरण।"
+  },
+  {
+    "term_id": "PAT_0042",
+    "english": "Injunction",
+    "hindi": "व्यादेश",
+    "category": "IP_ENFORCEMENT",
+    "aliases_en": [
+      "Restraining Order",
+      "Court Order"
+    ],
+    "aliases_hi": [
+      "निषेधाज्ञा",
+      "रोक"
+    ],
+    "do_not_translate": false,
+    "context": "a court order demanding a party to stop infringing an intellectual property right",
+    "explanation_en": "A court order requiring a party to do or stop doing a specified act.",
+    "explanation_hi": "न्यायालय का ऐसा आदेश जिसमें किसी पक्ष को कोई कार्य करने या रोकने का निर्देश दिया जाता है।"
+  },
+  {
+    "term_id": "PAT_0043",
+    "english": "Non-Disclosure Agreement",
+    "hindi": "गैर-प्रकटीकरण समझौता",
+    "category": "IP_AGREEMENT",
+    "aliases_en": [
+      "NDA",
+      "Confidentiality Agreement"
+    ],
+    "aliases_hi": [
+      "गोपनीयता समझौता"
+    ],
+    "do_not_translate": false,
+    "context": "a legal contract to protect trade secrets and sensitive information before patenting",
+    "explanation_en": "A contract requiring parties to protect specified confidential information.",
+    "explanation_hi": "ऐसा अनुबंध जिसमें पक्षकार निर्दिष्ट गोपनीय जानकारी की रक्षा करने पर सहमत होते हैं।"
+  },
+  {
+    "term_id": "PAT_0044",
+    "english": "Provisional Application",
+    "hindi": "अनंतिम आवेदन",
+    "category": "PATENT_FILING",
+    "aliases_en": [
+      "Temporary Application",
+      "Preliminary Application"
+    ],
+    "aliases_hi": [
+      "अस्थायी आवेदन"
+    ],
+    "do_not_translate": false,
+    "context": "an initial patent application used to secure a filing date before finalizing claims",
+    "explanation_en": "An initial patent filing used to establish an early filing date where permitted.",
+    "explanation_hi": "जहाँ अनुमति हो, प्रारंभिक फाइलिंग तिथि स्थापित करने के लिए किया जाने वाला प्रारंभिक पेटेंट आवेदन।"
+  },
+  {
+    "term_id": "PAT_0045",
+    "english": "Examination",
+    "hindi": "परीक्षण",
+    "category": "PATENT_PROCEDURE",
+    "aliases_en": [
+      "Patent Scrutiny",
+      "Assessment"
+    ],
+    "aliases_hi": [
+      "जांच",
+      "समीक्षा"
+    ],
+    "do_not_translate": false,
+    "context": "the review of a patent application by a patent examiner to determine patentability",
+    "explanation_en": "Review of a patent application to assess legal and patentability requirements.",
+    "explanation_hi": "पेटेंट आवेदन की कानूनी और पेटेंट-योग्यता आवश्यकताओं के लिए की जाने वाली समीक्षा।"
+  },
+  {
+    "term_id": "PAT_0046",
+    "english": "Expiration",
+    "hindi": "समाप्ति",
+    "category": "PATENT_STATUS",
+    "aliases_en": [
+      "Lapse",
+      "Expiry"
+    ],
+    "aliases_hi": [
+      "अवसान",
+      "वैधता समाप्ति"
+    ],
+    "do_not_translate": false,
+    "context": "the end of the legal term of a patent, after which it enters the public domain",
+    "explanation_en": "The end of the legal term of a patent or other time-limited right.",
+    "explanation_hi": "पेटेंट या अन्य समय-सीमित अधिकार की कानूनी अवधि का अंत।"
+  },
+  {
+    "term_id": "PAT_0047",
+    "english": "Freedom to Operate",
+    "hindi": "संचालन की स्वतंत्रता",
+    "category": "IP_STRATEGY",
+    "aliases_en": [
+      "FTO",
+      "Clearance"
+    ],
+    "aliases_hi": [
+      "कार्य करने की स्वतंत्रता"
+    ],
+    "do_not_translate": false,
+    "context": "determining whether a product or process can be commercialized without infringing third-party IP rights",
+    "explanation_en": "Assessment of whether a product or process can be used commercially without infringing relevant rights.",
+    "explanation_hi": "यह आकलन कि किसी उत्पाद या प्रक्रिया का उपयोग संबंधित अधिकारों का उल्लंघन किए बिना किया जा सकता है या नहीं।"
+  },
+  {
+    "term_id": "PAT_0048",
+    "english": "Compulsory License",
+    "hindi": "अनिवार्य अनुज्ञप्ति",
+    "category": "IP_LAW",
+    "aliases_en": [
+      "Statutory License",
+      "Forced Licensing"
+    ],
+    "aliases_hi": [
+      "अनिवार्य लाइसेंस"
+    ],
+    "do_not_translate": false,
+    "context": "government authorization allowing a third party to make, use, or sell a patented invention without the patent owner's consent",
+    "explanation_en": "Legal authorization to use a patented invention without the owner's consent under specified conditions.",
+    "explanation_hi": "निर्धारित कानूनी शर्तों के तहत मालिक की सहमति के बिना पेटेंट आविष्कार के उपयोग की कानूनी अनुमति।"
+  },
+  {
+    "term_id": "PAT_0049",
+    "english": "Anticipation",
+    "hindi": "प्रत्याशा",
+    "category": "PATENTABILITY",
+    "aliases_en": [
+      "Prior Disclosure",
+      "Lack of Novelty"
+    ],
+    "aliases_hi": [
+      "पूर्वानुमान",
+      "पहले से ज्ञात"
+    ],
+    "do_not_translate": false,
+    "context": "when a claimed invention is already known or disclosed in prior art, negating its novelty",
+    "explanation_en": "A situation where prior art discloses the claimed invention and may destroy its novelty.",
+    "explanation_hi": "ऐसी स्थिति जिसमें पूर्व कला दावे किए गए आविष्कार को प्रकट करती है और उसकी नवीनता समाप्त कर सकती है।"
+  },
+  {
+    "term_id": "PAT_0050",
+    "english": "Patent Cooperation Treaty",
+    "hindi": "पेटेंट सहयोग संधि",
+    "category": "INTERNATIONAL_IP",
+    "aliases_en": [
+      "PCT",
+      "International Patent Application"
+    ],
+    "aliases_hi": [
+      "पीसीटी"
+    ],
+    "do_not_translate": false,
+    "context": "an international treaty streamlining the process of filing patent applications in multiple countries simultaneously",
+    "explanation_en": "An international treaty providing a coordinated route for seeking patent protection in multiple countries.",
+    "explanation_hi": "कई देशों में पेटेंट संरक्षण मांगने के लिए समन्वित प्रक्रिया प्रदान करने वाली अंतरराष्ट्रीय संधि।"
+  },
+  {
+    "term_id": "PAT_0051",
+    "english": "Ojas",
+    "hindi": "ओज",
+    "category": "PHYSIOLOGY",
+    "aliases_en": [
+      "Vitality",
+      "Immunity",
+      "Vital Essence"
+    ],
+    "aliases_hi": [
+      "ओजस",
+      "जीवन शक्ति"
+    ],
+    "do_not_translate": true,
+    "context": "the ultimate essence of tissue metabolism that provides immunity, strength, and resilience",
+    "explanation_en": "An Ayurvedic concept traditionally associated with vitality, strength, and resilience.",
+    "explanation_hi": "जीवनशक्ति, बल और सहनशीलता से संबंधित पारंपरिक आयुर्वेदिक अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0052",
+    "english": "Ama",
+    "hindi": "आम",
+    "category": "PATHOLOGY",
+    "aliases_en": [
+      "Toxins",
+      "Metabolic Waste",
+      "Undigested Matter"
+    ],
+    "aliases_hi": [
+      "विजातीय पदार्थ",
+      "अपक्व अन्न"
+    ],
+    "do_not_translate": true,
+    "context": "toxic metabolic by-products formed due to improper digestion and sluggish metabolism",
+    "explanation_en": "An Ayurvedic concept describing incompletely processed or accumulated material associated with impaired digestion.",
+    "explanation_hi": "पाचन में गड़बड़ी से जुड़े अपूर्ण रूप से संसाधित या संचित पदार्थ की पारंपरिक आयुर्वेदिक अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0053",
+    "english": "Nadi Pariksha",
+    "hindi": "नाड़ी परीक्षा",
+    "category": "DIAGNOSTICS",
+    "aliases_en": [
+      "Pulse Diagnosis",
+      "Pulse Examination"
+    ],
+    "aliases_hi": [
+      "नाड़ी परीक्षण",
+      "नब्ज़ देखना"
+    ],
+    "do_not_translate": true,
+    "context": "traditional method of diagnosing ailments and doshic imbalances through feeling the pulse",
+    "explanation_en": "A traditional Ayurvedic assessment involving examination of the pulse.",
+    "explanation_hi": "नाड़ी के परीक्षण पर आधारित पारंपरिक आयुर्वेदिक मूल्यांकन पद्धति।"
+  },
+  {
+    "term_id": "PAT_0054",
+    "english": "Dhatu",
+    "hindi": "धातु",
+    "category": "ANATOMY",
+    "aliases_en": [
+      "Bodily Tissues",
+      "Tissue Elements"
+    ],
+    "aliases_hi": [
+      "सप्तधातु",
+      "शरीर के ऊतक"
+    ],
+    "do_not_translate": true,
+    "context": "the seven fundamental tissues (like plasma, blood, muscle, etc.) that sustain and make up the human body",
+    "explanation_en": "An Ayurvedic concept referring to the seven fundamental tissue systems.",
+    "explanation_hi": "आयुर्वेद में वर्णित सात मूलभूत ऊतक-प्रणालियों से संबंधित अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0055",
+    "english": "Srotas",
+    "hindi": "स्रोतस",
+    "category": "ANATOMY",
+    "aliases_en": [
+      "Body Channels",
+      "Microchannels"
+    ],
+    "aliases_hi": [
+      "नाड़ी",
+      "नलिकाएं"
+    ],
+    "do_not_translate": true,
+    "context": "the channels, pores, and pathways in the body through which nutrients, energies, and wastes flow",
+    "explanation_en": "Ayurvedic channels or pathways described as carrying substances and processes within the body.",
+    "explanation_hi": "आयुर्वेद में शरीर के भीतर पदार्थों और प्रक्रियाओं के प्रवाह से जुड़े चैनल या मार्ग।"
+  },
+  {
+    "term_id": "PAT_0056",
+    "english": "Abhyanga",
+    "hindi": "अभ्यंग",
+    "category": "THERAPY",
+    "aliases_en": [
+      "Oil Massage",
+      "Ayurvedic Massage"
+    ],
+    "aliases_hi": [
+      "तैल मालिश",
+      "अंग मर्दन"
+    ],
+    "do_not_translate": true,
+    "context": "a traditional healing and relaxing full-body massage using warm medicated herbal oils",
+    "explanation_en": "A traditional Ayurvedic practice involving application and massage of oil over the body.",
+    "explanation_hi": "शरीर पर तेल लगाने और तेल से मालिश करने की पारंपरिक आयुर्वेदिक प्रक्रिया।"
+  },
+  {
+    "term_id": "PAT_0057",
+    "english": "Shirodhara",
+    "hindi": "शिरोधारा",
+    "category": "THERAPY",
+    "aliases_en": [
+      "Forehead Oil Pouring"
+    ],
+    "aliases_hi": [
+      "शिरोसेक"
+    ],
+    "do_not_translate": true,
+    "context": "a soothing therapeutic process involving continuous, rhythmic pouring of warm oil over the forehead",
+    "explanation_en": "A traditional Ayurvedic procedure involving a steady stream of liquid directed onto the forehead.",
+    "explanation_hi": "माथे पर तरल की निरंतर धार डालने वाली पारंपरिक आयुर्वेदिक प्रक्रिया।"
+  },
+  {
+    "term_id": "PAT_0058",
+    "english": "Prana",
+    "hindi": "प्राण",
+    "category": "BIO_ENERGY",
+    "aliases_en": [
+      "Life Force",
+      "Vital Energy",
+      "Breath"
+    ],
+    "aliases_hi": [
+      "प्राणवायु",
+      "जीवनी शक्ति"
+    ],
+    "do_not_translate": true,
+    "context": "the foundational vital life energy that sustains the body, mind, and consciousness",
+    "explanation_en": "An Ayurvedic concept referring to vital life energy.",
+    "explanation_hi": "जीवन ऊर्जा से संबंधित आयुर्वेदिक अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0059",
+    "english": "Guna",
+    "hindi": "गुण",
+    "category": "PHILOSOPHY_AND_PHARMACOLOGY",
+    "aliases_en": [
+      "Properties",
+      "Qualities",
+      "Attributes"
+    ],
+    "aliases_hi": [
+      "विशेषता",
+      "स्वभाव"
+    ],
+    "do_not_translate": true,
+    "context": "the inherent physical and energetic qualities of substances that determine their effect on the doshas",
+    "explanation_en": "Qualities or attributes used in Ayurvedic descriptions of substances and their effects.",
+    "explanation_hi": "पदार्थों और उनके प्रभावों का वर्णन करने के लिए उपयोग किए जाने वाले आयुर्वेदिक गुण या विशेषताएँ।"
+  },
+  {
+    "term_id": "PAT_0060",
+    "english": "Rasa",
+    "hindi": "रस",
+    "category": "PHARMACOLOGY",
+    "aliases_en": [
+      "Taste",
+      "Essence",
+      "Plasma"
+    ],
+    "aliases_hi": [
+      "स्वाद",
+      "रस धातु"
+    ],
+    "do_not_translate": true,
+    "context": "the initial therapeutic taste of a substance on the tongue, or the primary tissue (plasma) in the body",
+    "explanation_en": "An Ayurvedic term that can mean taste and has other technical meanings depending on context.",
+    "explanation_hi": "आयुर्वेद का संदर्भ-निर्भर शब्द, जिसका अर्थ स्वाद तथा अन्य तकनीकी अर्थ हो सकता है।"
+  },
+  {
+    "term_id": "PAT_0061",
+    "english": "Vipaka",
+    "hindi": "विपाक",
+    "category": "PHARMACOLOGY",
+    "aliases_en": [
+      "Post-digestive Effect",
+      "Metabolic End Effect"
+    ],
+    "aliases_hi": [
+      "पाकोत्तर प्रभाव"
+    ],
+    "do_not_translate": true,
+    "context": "the final metabolic effect of food or medicinal herbs on the body after digestion is complete",
+    "explanation_en": "The Ayurvedic concept of the post-digestive effect of food or medicinal substances.",
+    "explanation_hi": "भोजन या औषधीय पदार्थों के पाचन के बाद होने वाले प्रभाव की आयुर्वेदिक अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0062",
+    "english": "Virya",
+    "hindi": "वीर्य",
+    "category": "PHARMACOLOGY",
+    "aliases_en": [
+      "Potency",
+      "Thermal Effect"
+    ],
+    "aliases_hi": [
+      "प्रभाव शक्ति",
+      "तासीर"
+    ],
+    "do_not_translate": true,
+    "context": "the active energetic potency or inherent temperature (heating or cooling) of an herb or food",
+    "explanation_en": "An Ayurvedic concept describing the potency or energetic action of a substance.",
+    "explanation_hi": "किसी पदार्थ की शक्ति या ऊर्जात्मक क्रिया का वर्णन करने वाली आयुर्वेदिक अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0063",
+    "english": "Prabhava",
+    "hindi": "प्रभाव",
+    "category": "PHARMACOLOGY",
+    "aliases_en": [
+      "Special Effect",
+      "Specific Action"
+    ],
+    "aliases_hi": [
+      "विशिष्ट कर्म",
+      "अचूक प्रभाव"
+    ],
+    "do_not_translate": true,
+    "context": "the unique and specific therapeutic action of a medicinal substance that defies general pharmacological rules",
+    "explanation_en": "An Ayurvedic concept referring to a distinctive action of a substance.",
+    "explanation_hi": "किसी पदार्थ की विशिष्ट क्रिया को संदर्भित करने वाली आयुर्वेदिक अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0064",
+    "english": "Dinacharya",
+    "hindi": "दिनचर्या",
+    "category": "PREVENTIVE_MEDICINE",
+    "aliases_en": [
+      "Daily Routine",
+      "Daily Regimen"
+    ],
+    "aliases_hi": [
+      "दैनिक दिनचर्या",
+      "नित्यकर्म"
+    ],
+    "do_not_translate": true,
+    "context": "the recommended daily lifestyle practices to synchronize the body with nature's daily rhythms",
+    "explanation_en": "An Ayurvedic daily routine intended to support health and regularity.",
+    "explanation_hi": "स्वास्थ्य और नियमितता बनाए रखने में सहायक आयुर्वेदिक दैनिक जीवन-पद्धति।"
+  },
+  {
+    "term_id": "PAT_0065",
+    "english": "Ritucharya",
+    "hindi": "ऋतुचर्या",
+    "category": "PREVENTIVE_MEDICINE",
+    "aliases_en": [
+      "Seasonal Routine",
+      "Seasonal Regimen"
+    ],
+    "aliases_hi": [
+      "मौसमी दिनचर्या"
+    ],
+    "do_not_translate": true,
+    "context": "dietary and lifestyle guidelines for adapting to changing seasons to prevent seasonal illnesses",
+    "explanation_en": "Ayurvedic dietary and lifestyle practices adapted to seasonal changes.",
+    "explanation_hi": "ऋतु परिवर्तन के अनुसार अपनाई जाने वाली आयुर्वेदिक आहार और जीवनशैली पद्धतियाँ।"
+  },
+  {
+    "term_id": "PAT_0066",
+    "english": "Anupana",
+    "hindi": "अनुपान",
+    "category": "PHARMACEUTICS",
+    "aliases_en": [
+      "Vehicle",
+      "Carrier Substance"
+    ],
+    "aliases_hi": [
+      "सहपान"
+    ],
+    "do_not_translate": true,
+    "context": "a carrier substance (like warm water, honey, or milk) taken with medicine to enhance absorption and direct it to specific tissues",
+    "explanation_en": "A substance taken with medicine and traditionally associated with its administration or action.",
+    "explanation_hi": "औषधि के साथ लिया जाने वाला पदार्थ, जिसे परंपरागत रूप से उसके सेवन या प्रभाव में सहायक माना जाता है।"
+  },
+  {
+    "term_id": "PAT_0067",
+    "english": "Nidana",
+    "hindi": "निदान",
+    "category": "DIAGNOSTICS",
+    "aliases_en": [
+      "Etiology",
+      "Diagnosis",
+      "Root Cause"
+    ],
+    "aliases_hi": [
+      "रोगनिदान",
+      "कारण"
+    ],
+    "do_not_translate": true,
+    "context": "the diagnosis of a disease and the systematic identification of its causative factors",
+    "explanation_en": "In Ayurveda, the causes of disease and, depending on context, diagnostic assessment.",
+    "explanation_hi": "आयुर्वेद में रोग के कारणों तथा संदर्भ के अनुसार निदानात्मक आकलन से संबंधित अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0068",
+    "english": "Bhasma",
+    "hindi": "भस्म",
+    "category": "PHARMACEUTICS",
+    "aliases_en": [
+      "Calcined Ash",
+      "Herbomineral Ash"
+    ],
+    "aliases_hi": [
+      "राख",
+      "शोधित धातु"
+    ],
+    "do_not_translate": true,
+    "context": "specially purified and calcined metallic or mineral preparations used in micro-doses for fast-acting medicine",
+    "explanation_en": "A specially processed Ayurvedic preparation traditionally made from purified metals, minerals, or other substances.",
+    "explanation_hi": "शुद्ध की गई धातुओं, खनिजों या अन्य पदार्थों से बनी विशेष रूप से संसाधित आयुर्वेदिक तैयारी।"
+  },
+  {
+    "term_id": "PAT_0069",
+    "english": "Kwatha",
+    "hindi": "क्वाथ",
+    "category": "PHARMACEUTICS",
+    "aliases_en": [
+      "Decoction",
+      "Herbal Extract"
+    ],
+    "aliases_hi": [
+      "काढ़ा"
+    ],
+    "do_not_translate": true,
+    "context": "a concentrated liquid preparation made by heavily boiling herbs in water to extract their water-soluble active principles",
+    "explanation_en": "An Ayurvedic liquid preparation traditionally made by boiling medicinal plant material in water.",
+    "explanation_hi": "औषधीय वनस्पति सामग्री को पानी में उबालकर बनाई जाने वाली पारंपरिक आयुर्वेदिक तरल तैयारी।"
+  },
+  {
+    "term_id": "PAT_0070",
+    "english": "Chikitsa",
+    "hindi": "चिकित्सा",
+    "category": "TREATMENT",
+    "aliases_en": [
+      "Treatment",
+      "Therapy",
+      "Management"
+    ],
+    "aliases_hi": [
+      "इलाज",
+      "उपचार"
+    ],
+    "do_not_translate": true,
+    "context": "the comprehensive methodology, protocol, and approach used for treating diseases and restoring balance",
+    "explanation_en": "The therapeutic approach or treatment method used in Ayurveda.",
+    "explanation_hi": "आयुर्वेद में किसी स्वास्थ्य स्थिति के लिए अपनाई जाने वाली उपचार-पद्धति।"
+  },
+  {
+    "term_id": "PAT_0071",
+    "english": "Access and Benefit Sharing",
+    "hindi": "पहुँच और लाभ साझाकरण",
+    "category": "TK_LEGAL_FRAMEWORK",
+    "aliases_en": [
+      "ABS",
+      "Benefit Sharing",
+      "Equitable Sharing"
+    ],
+    "aliases_hi": [
+      "लाभ का बँटवारा",
+      "समान लाभ वितरण"
+    ],
+    "do_not_translate": false,
+    "context": "mechanism ensuring fair distribution of benefits arising from the commercial or scientific use of traditional knowledge and genetic resources",
+    "explanation_en": "A framework for sharing benefits from the use of genetic resources and associated traditional knowledge.",
+    "explanation_hi": "आनुवंशिक संसाधनों और संबंधित पारंपरिक ज्ञान के उपयोग से होने वाले लाभों को साझा करने का ढाँचा।"
+  },
+  {
+    "term_id": "PAT_0072",
+    "english": "Prior Informed Consent",
+    "hindi": "पूर्व सूचित सहमति",
+    "category": "TK_LEGAL_FRAMEWORK",
+    "aliases_en": [
+      "PIC",
+      "Informed Consent"
+    ],
+    "aliases_hi": [
+      "अग्रिम सहमति",
+      "पूर्व अनुमति"
+    ],
+    "do_not_translate": false,
+    "context": "the mandatory permission obtained from indigenous communities fully explaining the intent before accessing their traditional knowledge or resources",
+    "explanation_en": "Permission obtained before accessing traditional knowledge or resources after relevant information is explained.",
+    "explanation_hi": "संबंधित जानकारी समझाए जाने के बाद पारंपरिक ज्ञान या संसाधनों तक पहुँच से पहले प्राप्त अनुमति।"
+  },
+  {
+    "term_id": "PAT_0073",
+    "english": "Misappropriation",
+    "hindi": "दुर्विनियोग",
+    "category": "TK_EXPLOITATION",
+    "aliases_en": [
+      "Unfair Exploitation",
+      "Wrongful Appropriation"
+    ],
+    "aliases_hi": [
+      "अनुचित उपयोग",
+      "गबन",
+      "अनधिकृत कब्जा"
+    ],
+    "do_not_translate": false,
+    "context": "the unauthorized, unethical, or illegal acquisition and commercialization of traditional knowledge by external parties",
+    "explanation_en": "Unauthorized or wrongful acquisition, use, or commercialization of knowledge, resources, or rights.",
+    "explanation_hi": "ज्ञान, संसाधनों या अधिकारों का अनधिकृत या अनुचित अधिग्रहण, उपयोग या व्यावसायीकरण।"
+  },
+  {
+    "term_id": "PAT_0074",
+    "english": "Sui Generis System",
+    "hindi": "सुई जेनेरिस प्रणाली",
+    "category": "TK_PROTECTION",
+    "aliases_en": [
+      "Unique Legal System",
+      "Custom-built Protection"
+    ],
+    "aliases_hi": [
+      "विशिष्ट प्रणाली",
+      "अद्वितीय विधि"
+    ],
+    "do_not_translate": false,
+    "context": "a unique, specifically designed legal framework created to protect traditional knowledge where standard intellectual property laws are inadequate",
+    "explanation_en": "A specially designed legal framework for a particular subject where ordinary IP rules may be inadequate.",
+    "explanation_hi": "किसी विशेष विषय के लिए बनाई गई विशिष्ट कानूनी व्यवस्था, जहाँ सामान्य बौद्धिक संपदा नियम पर्याप्त न हों।"
+  },
+  {
+    "term_id": "PAT_0075",
+    "english": "Ethnobotany",
+    "hindi": "मानव-वनस्पति विज्ञान",
+    "category": "TK_SCIENCE",
+    "aliases_en": [
+      "Indigenous Botany",
+      "Traditional Plant Science"
+    ],
+    "aliases_hi": [
+      "लोक वनस्पति विज्ञान",
+      "नृजातीय वनस्पति विज्ञान"
+    ],
+    "do_not_translate": false,
+    "context": "the scientific study of the traditional knowledge and customs of indigenous communities concerning plants and their medicinal or cultural uses",
+    "explanation_en": "The study of relationships between people, cultures, and plants, including traditional plant knowledge.",
+    "explanation_hi": "लोगों, संस्कृतियों और पौधों के संबंधों तथा पौधों से जुड़े पारंपरिक ज्ञान का अध्ययन।"
+  },
+  {
+    "term_id": "PAT_0076",
+    "english": "Traditional Cultural Expressions",
+    "hindi": "पारंपरिक सांस्कृतिक अभिव्यक्तियाँ",
+    "category": "FOLKLORE",
+    "aliases_en": [
+      "TCEs",
+      "Expressions of Folklore",
+      "Cultural Heritage"
+    ],
+    "aliases_hi": [
+      "लोककथा की अभिव्यक्तियाँ",
+      "सांस्कृतिक धरोहर"
+    ],
+    "do_not_translate": false,
+    "context": "tangible and intangible forms in which traditional culture is expressed, such as songs, dances, rituals, and indigenous art",
+    "explanation_en": "Forms through which traditional culture is expressed, including artistic or ceremonial forms.",
+    "explanation_hi": "वे रूप जिनमें पारंपरिक संस्कृति व्यक्त होती है, जैसे कलात्मक या अनुष्ठानिक रूप।"
+  },
+  {
+    "term_id": "PAT_0077",
+    "english": "Oral Tradition",
+    "hindi": "मौखिक परंपरा",
+    "category": "TK_TRANSMISSION",
+    "aliases_en": [
+      "Oral History",
+      "Verbal Transmission"
+    ],
+    "aliases_hi": [
+      "श्रुति परंपरा",
+      "मौखिक ज्ञान",
+      "वाचिक परंपरा"
+    ],
+    "do_not_translate": false,
+    "context": "the cultural knowledge, practices, and information passed down from one generation to the next by word of mouth rather than written texts",
+    "explanation_en": "Transmission of knowledge, stories, practices, or cultural information through speech across generations.",
+    "explanation_hi": "ज्ञान, कथाओं, प्रथाओं या सांस्कृतिक जानकारी को पीढ़ियों तक मौखिक रूप से पहुँचाना।"
+  },
+  {
+    "term_id": "PAT_0078",
+    "english": "Defensive Protection",
+    "hindi": "रक्षात्मक संरक्षण",
+    "category": "TK_PROTECTION",
+    "aliases_en": [
+      "Preventive Protection",
+      "Pre-emptive Shield"
+    ],
+    "aliases_hi": [
+      "निवारक सुरक्षा",
+      "बचावकारी संरक्षण"
+    ],
+    "do_not_translate": false,
+    "context": "strategies and databases (like the TKDL) used specifically to prevent third parties from wrongfully acquiring patents over existing traditional knowledge",
+    "explanation_en": "Measures such as documentation or databases used to prevent inappropriate IP claims over existing traditional knowledge.",
+    "explanation_hi": "मौजूदा पारंपरिक ज्ञान पर अनुचित बौद्धिक संपदा दावों को रोकने के लिए दस्तावेजीकरण या डेटाबेस जैसे उपाय।"
+  },
+  {
+    "term_id": "PAT_0079",
+    "english": "Positive Protection",
+    "hindi": "सकारात्मक संरक्षण",
+    "category": "TK_PROTECTION",
+    "aliases_en": [
+      "Active Protection",
+      "Rights-based Protection"
+    ],
+    "aliases_hi": [
+      "सक्रिय सुरक्षा",
+      "सकारात्मक रक्षा"
+    ],
+    "do_not_translate": false,
+    "context": "the proactive granting of specific intellectual property rights or sui generis rights to TK holders, empowering them to control and benefit from its use",
+    "explanation_en": "Granting or recognizing rights that allow traditional knowledge holders to control or benefit from its use.",
+    "explanation_hi": "ऐसे अधिकार प्रदान या मान्यता देना जिनसे पारंपरिक ज्ञान धारक उसके उपयोग को नियंत्रित या उससे लाभ प्राप्त कर सकें।"
+  },
+  {
+    "term_id": "PAT_0080",
+    "english": "Customary Law",
+    "hindi": "प्रथागत कानून",
+    "category": "TK_LEGAL_FRAMEWORK",
+    "aliases_en": [
+      "Traditional Law",
+      "Indigenous Custom",
+      "Tribal Law"
+    ],
+    "aliases_hi": [
+      "पारंपरिक नियम",
+      "रूढ़िगत विधि"
+    ],
+    "do_not_translate": false,
+    "context": "the established patterns of behavior that are intrinsically accepted as binding legal requirements or rules of conduct within a local community",
+    "explanation_en": "Rules and practices accepted as binding within a community through established tradition and usage.",
+    "explanation_hi": "स्थापित परंपरा और व्यवहार के आधार पर समुदाय में बाध्यकारी माने जाने वाले नियम और प्रथाएँ।"
+  },
+  {
+    "term_id": "PAT_0081",
+    "english": "Traditional Ecological Knowledge",
+    "hindi": "पारंपरिक पारिस्थितिक ज्ञान",
+    "category": "TK_ENVIRONMENT",
+    "aliases_en": [
+      "TEK",
+      "Indigenous Environmental Knowledge"
+    ],
+    "aliases_hi": [
+      "स्थानीय पर्यावरण ज्ञान",
+      "पारिस्थितिकीय लोकज्ञान"
+    ],
+    "do_not_translate": false,
+    "context": "the evolving knowledge system acquired by indigenous peoples over hundreds of years through direct, intimate contact with their local environment",
+    "explanation_en": "Knowledge developed by communities through long-term interaction with their local environment.",
+    "explanation_hi": "स्थानीय पर्यावरण के साथ लंबे समय के संपर्क से समुदायों द्वारा विकसित ज्ञान।"
+  },
+  {
+    "term_id": "PAT_0082",
+    "english": "Indigenous Community",
+    "hindi": "स्वदेशी समुदाय",
+    "category": "TK_HOLDERS",
+    "aliases_en": [
+      "Local Community",
+      "Aboriginal People",
+      "Native Tribe"
+    ],
+    "aliases_hi": [
+      "मूलनिवासी समाज",
+      "स्थानीय समुदाय",
+      "जनजातीय समुदाय"
+    ],
+    "do_not_translate": false,
+    "context": "the native populations and ethnic groups who are the original creators, custodians, and continuous transmitters of traditional knowledge",
+    "explanation_en": "A community with a distinct cultural identity and continuing relationship with traditional lands, resources, or knowledge.",
+    "explanation_hi": "विशिष्ट सांस्कृतिक पहचान और पारंपरिक भूमि, संसाधनों या ज्ञान से निरंतर संबंध रखने वाला समुदाय।"
+  },
+  {
+    "term_id": "PAT_0083",
+    "english": "People's Biodiversity Register",
+    "hindi": "जन जैव-विविधता रजिस्टर",
+    "category": "TK_DOCUMENTATION",
+    "aliases_en": [
+      "PBR",
+      "Community Register",
+      "Biodiversity Document"
+    ],
+    "aliases_hi": [
+      "जैव-विविधता पंजिका",
+      "पीबीआर"
+    ],
+    "do_not_translate": false,
+    "context": "a formally documented record created at the grassroots level containing comprehensive information on the availability and local knowledge of biological resources",
+    "explanation_en": "A community-level record documenting local biological resources and associated knowledge.",
+    "explanation_hi": "स्थानीय जैविक संसाधनों और संबंधित ज्ञान का समुदाय स्तर पर बनाया गया दस्तावेजी रिकॉर्ड।"
+  },
+  {
+    "term_id": "PAT_0084",
+    "english": "Sacred Grove",
+    "hindi": "पवित्र उपवन",
+    "category": "TK_CONSERVATION",
+    "aliases_en": [
+      "Sacred Forest",
+      "Consecrated Grove"
+    ],
+    "aliases_hi": [
+      "देवराय",
+      "पवित्र वन",
+      "देव वन"
+    ],
+    "do_not_translate": false,
+    "context": "tracts of forest land traditionally protected by communities due to deep religious beliefs and cultural significance, heavily aiding biodiversity conservation",
+    "explanation_en": "A forest or natural area traditionally protected because of cultural or spiritual significance.",
+    "explanation_hi": "सांस्कृतिक या आध्यात्मिक महत्व के कारण परंपरागत रूप से संरक्षित वन या प्राकृतिक क्षेत्र।"
+  },
+  {
+    "term_id": "PAT_0085",
+    "english": "Traditional Healer",
+    "hindi": "पारंपरिक चिकित्सक",
+    "category": "TK_PRACTITIONERS",
+    "aliases_en": [
+      "Folk Healer",
+      "Medicine Man",
+      "Local Practitioner"
+    ],
+    "aliases_hi": [
+      "वैद्य",
+      "ओझा",
+      "स्थानीय हकीम"
+    ],
+    "do_not_translate": false,
+    "context": "a recognized person within a community who is competent to provide healthcare utilizing plant, animal, and mineral substances based on generations of traditional practices",
+    "explanation_en": "A community-recognized person who provides traditional health-related care.",
+    "explanation_hi": "समुदाय द्वारा मान्यता प्राप्त व्यक्ति जो पारंपरिक स्वास्थ्य-संबंधी देखभाल प्रदान करता है।"
+  },
+  {
+    "term_id": "PAT_0086",
+    "english": "Traditional Knowledge Resource Classification",
+    "hindi": "पारंपरिक ज्ञान संसाधन वर्गीकरण",
+    "category": "TKDL_CLASSIFICATION",
+    "aliases_en": [
+      "TKRC"
+    ],
+    "aliases_hi": [
+      "टीकेआरसी"
+    ],
+    "do_not_translate": false,
+    "context": "an innovative structured classification system created specifically for TKDL to systematically categorize traditional medicine knowledge",
+    "explanation_en": "A structured classification approach for categorizing traditional medicine knowledge in the TKDL context.",
+    "explanation_hi": "TKDL के संदर्भ में पारंपरिक चिकित्सा ज्ञान को वर्गीकृत करने की संरचित पद्धति।"
+  },
+  {
+    "term_id": "PAT_0087",
+    "english": "International Patent Classification",
+    "hindi": "अंतर्राष्ट्रीय पेटेंट वर्गीकरण",
+    "category": "PATENT_SYSTEM",
+    "aliases_en": [
+      "IPC"
+    ],
+    "aliases_hi": [
+      "आईपीसी"
+    ],
+    "do_not_translate": false,
+    "context": "the global hierarchical system for classifying patents, which TKRC is mapped against to help international patent examiners",
+    "explanation_en": "An international hierarchical system for classifying patents by technology area.",
+    "explanation_hi": "पेटेंटों को तकनीकी क्षेत्र के अनुसार वर्गीकृत करने वाली अंतरराष्ट्रीय पदानुक्रमित प्रणाली।"
+  },
+  {
+    "term_id": "PAT_0088",
+    "english": "AYUSH",
+    "hindi": "आयुष",
+    "category": "GOVERNING_BODY",
+    "aliases_en": [
+      "Ayurveda, Yoga and Naturopathy, Unani, Siddha and Homeopathy"
+    ],
+    "aliases_hi": [
+      "आयुर्वेद, योग, यूनानी, सिद्ध और होम्योपैथी मंत्रालय"
+    ],
+    "do_not_translate": true,
+    "context": "the governmental ministry in India that partnered with CSIR to establish and manage the TKDL database",
+    "explanation_en": "The Government of India's ministry responsible for Ayurveda, Yoga and Naturopathy, Unani, Siddha, and Homoeopathy.",
+    "explanation_hi": "भारत सरकार का मंत्रालय जो आयुर्वेद, योग एवं प्राकृतिक चिकित्सा, यूनानी, सिद्ध और होम्योपैथी से संबंधित है।"
+  },
+  {
+    "term_id": "PAT_0089",
+    "english": "Unani",
+    "hindi": "यूनानी",
+    "category": "TRADITIONAL_MEDICINE",
+    "aliases_en": [
+      "Yunani Medicine",
+      "Greco-Arabic Medicine"
+    ],
+    "aliases_hi": [
+      "यूनानी चिकित्सा",
+      "यूनानी तिब्ब"
+    ],
+    "do_not_translate": true,
+    "context": "one of the major traditional systems of healing transcribed and protected within the TKDL repository",
+    "explanation_en": "A traditional medicine system with historical roots in Greco-Arabic medical traditions.",
+    "explanation_hi": "यूनानी-अरबी चिकित्सा परंपराओं से ऐतिहासिक रूप से जुड़ी पारंपरिक चिकित्सा प्रणाली।"
+  },
+  {
+    "term_id": "PAT_0090",
+    "english": "Siddha",
+    "hindi": "सिद्ध",
+    "category": "TRADITIONAL_MEDICINE",
+    "aliases_en": [
+      "Siddha Vaidya"
+    ],
+    "aliases_hi": [
+      "सिद्ध चिकित्सा"
+    ],
+    "do_not_translate": true,
+    "context": "an ancient traditional medicine system originating in South India, systematically documented in TKDL to prevent biopiracy",
+    "explanation_en": "A traditional medicine system particularly associated with Tamil medical traditions in South India.",
+    "explanation_hi": "दक्षिण भारत की तमिल चिकित्सा परंपराओं से विशेष रूप से जुड़ी पारंपरिक चिकित्सा प्रणाली।"
+  },
+  {
+    "term_id": "PAT_0091",
+    "english": "Sowa-Rigpa",
+    "hindi": "सोवा-रिग्पा",
+    "category": "TRADITIONAL_MEDICINE",
+    "aliases_en": [
+      "Amchi Medicine",
+      "Tibetan Medicine"
+    ],
+    "aliases_hi": [
+      "आमची चिकित्सा",
+      "भोटिया चिकित्सा"
+    ],
+    "do_not_translate": true,
+    "context": "a traditional Himalayan medical system whose classical formulations are digitized and included in the TKDL",
+    "explanation_en": "A traditional Himalayan medical system associated with Tibetan medical traditions.",
+    "explanation_hi": "तिब्बती चिकित्सा परंपराओं से जुड़ी पारंपरिक हिमालयी चिकित्सा प्रणाली।"
+  },
+  {
+    "term_id": "PAT_0092",
+    "english": "Digitization",
+    "hindi": "डिजिटलीकरण",
+    "category": "TK_DATA_MANAGEMENT",
+    "aliases_en": [
+      "Digital Archiving",
+      "Electronic Conversion"
+    ],
+    "aliases_hi": [
+      "अंकीयकरण",
+      "डिजिटल संग्रह"
+    ],
+    "do_not_translate": false,
+    "context": "the fundamental process of converting ancient physical manuscripts and texts into searchable electronic data for the TKDL",
+    "explanation_en": "Converting physical or analog information into searchable and processable digital form.",
+    "explanation_hi": "भौतिक या एनालॉग जानकारी को खोजने और संसाधित करने योग्य डिजिटल रूप में बदलना।"
+  },
+  {
+    "term_id": "PAT_0093",
+    "english": "Third Party Observation",
+    "hindi": "तीसरे पक्ष का अवलोकन",
+    "category": "PATENT_INTERVENTION",
+    "aliases_en": [
+      "TPO",
+      "Third Party Submission"
+    ],
+    "aliases_hi": [
+      "तृतीय पक्ष प्रस्तुति"
+    ],
+    "do_not_translate": false,
+    "context": "a legal mechanism utilized by the TKDL team to submit evidence of prior art to international patent offices to block erroneous patents",
+    "explanation_en": "A third-party submission to a patent office containing information relevant to application examination.",
+    "explanation_hi": "पेटेंट कार्यालय को तीसरे पक्ष द्वारा दिया गया ऐसा प्रस्तुतिकरण जिसमें आवेदन की जांच से संबंधित जानकारी हो।"
+  },
+  {
+    "term_id": "PAT_0094",
+    "english": "Access Agreement",
+    "hindi": "पहुँच समझौता",
+    "category": "TKDL_LEGAL",
+    "aliases_en": [
+      "TKDL Access Treaty",
+      "User Agreement"
+    ],
+    "aliases_hi": [
+      "उपयोगकर्ता अनुबंध",
+      "एक्सेस एग्रीमेंट"
+    ],
+    "do_not_translate": false,
+    "context": "the formal non-disclosure agreements signed between India and international patent offices granting them access to the TKDL database",
+    "explanation_en": "A formal agreement defining conditions for access to protected information or a database.",
+    "explanation_hi": "संरक्षित जानकारी या डेटाबेस तक पहुँच की शर्तें निर्धारित करने वाला औपचारिक समझौता।"
+  },
+  {
+    "term_id": "PAT_0095",
+    "english": "Bibliographic Data",
+    "hindi": "ग्रंथसूची डेटा",
+    "category": "TKDL_DOCUMENTATION",
+    "aliases_en": [
+      "Reference Data",
+      "Citation Details"
+    ],
+    "aliases_hi": [
+      "संदर्भ विवरण",
+      "ग्रंथ सूची"
+    ],
+    "do_not_translate": false,
+    "context": "structured information in TKDL detailing the original ancient text, author, and verse where a specific traditional formulation is found",
+    "explanation_en": "Structured reference information about a document or source, such as title, author, and citation details.",
+    "explanation_hi": "किसी दस्तावेज या स्रोत की संरचित संदर्भ जानकारी, जैसे शीर्षक, लेखक और उद्धरण विवरण।"
+  },
+  {
+    "term_id": "PAT_0096",
+    "english": "Botanical Nomenclature",
+    "hindi": "वानस्पतिक नामकरण",
+    "category": "TKDL_SCIENCE",
+    "aliases_en": [
+      "Scientific Naming",
+      "Plant Taxonomy"
+    ],
+    "aliases_hi": [
+      "वनस्पति नामकरण"
+    ],
+    "do_not_translate": false,
+    "context": "the standardized scientific naming of medicinal plants mapped against local names in TKDL for precise identification by patent examiners",
+    "explanation_en": "The standardized scientific system for naming plants.",
+    "explanation_hi": "पौधों के वैज्ञानिक नामकरण की मानकीकृत प्रणाली।"
+  },
+  {
+    "term_id": "PAT_0097",
+    "english": "Translation",
+    "hindi": "अनुवाद",
+    "category": "TKDL_DATA_PROCESSING",
+    "aliases_en": [
+      "Language Conversion"
+    ],
+    "aliases_hi": [
+      "भाषान्तरण",
+      "तर्जुमा"
+    ],
+    "do_not_translate": false,
+    "context": "the critical process of translating ancient texts from local languages (Sanskrit, Tamil, Urdu) into multiple international languages (English, French, German, Spanish, Japanese)",
+    "explanation_en": "Expressing the meaning of content from one language in another while preserving its intended meaning.",
+    "explanation_hi": "मूल आशय को बनाए रखते हुए सामग्री का अर्थ एक भाषा से दूसरी भाषा में व्यक्त करना।"
+  },
+  {
+    "term_id": "PAT_0098",
+    "english": "Evidentiary Record",
+    "hindi": "साक्ष्य रिकॉर्ड",
+    "category": "LEGAL_EVIDENCE",
+    "aliases_en": [
+      "Proof of Existence",
+      "Documentary Evidence"
+    ],
+    "aliases_hi": [
+      "प्रमाणित रिकॉर्ड",
+      "दस्तावेजी साक्ष्य"
+    ],
+    "do_not_translate": false,
+    "context": "the certified digital pages generated by TKDL serving as definitive legal proof that a specific formulation has existed in the public domain for centuries",
+    "explanation_en": "A documented record that can be used as evidence for a factual or legal claim.",
+    "explanation_hi": "ऐसा दस्तावेजीकृत रिकॉर्ड जिसका उपयोग तथ्यात्मक या कानूनी दावे के साक्ष्य के रूप में किया जा सकता है।"
+  },
+  {
+    "term_id": "PAT_0099",
+    "english": "Council of Scientific and Industrial Research",
+    "hindi": "वैज्ञानिक तथा औद्योगिक अनुसंधान परिषद",
+    "category": "INSTITUTION",
+    "aliases_en": [
+      "CSIR"
+    ],
+    "aliases_hi": [
+      "सीएसआईआर"
+    ],
+    "do_not_translate": true,
+    "context": "the premier national R&D organization in India that conceptualized, developed, and currently maintains the TKDL",
+    "explanation_en": "An Indian public research organization involved in scientific and industrial research and development.",
+    "explanation_hi": "वैज्ञानिक और औद्योगिक अनुसंधान एवं विकास में कार्य करने वाला भारत का सार्वजनिक अनुसंधान संगठन।"
+  },
+  {
+    "term_id": "PAT_0100",
+    "english": "Interoperability",
+    "hindi": "अंतर्संचालनीयता",
+    "category": "TKDL_TECHNOLOGY",
+    "aliases_en": [
+      "System Compatibility",
+      "Data Linkage"
+    ],
+    "aliases_hi": [
+      "पारस्परिकता",
+      "सिस्टम अनुकूलता"
+    ],
+    "do_not_translate": false,
+    "context": "the technical design allowing the TKRC system to seamlessly link and function alongside standard international patent classification systems",
+    "explanation_en": "The ability of different systems to exchange and use information effectively with one another.",
+    "explanation_hi": "अलग-अलग प्रणालियों की एक-दूसरे के साथ जानकारी का प्रभावी रूप से आदान-प्रदान और उपयोग करने की क्षमता।"
+  }
+
+  ,
+  {
+    "term_id": "PAT_0101",
+    "english": "Agroforestry",
+    "hindi": "कृषि वानिकी",
+    "category": "FARMING_SYSTEM",
+    "aliases_en": ["Agrosilviculture"],
+    "aliases_hi": ["एग्रोफॉरेस्ट्री"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "A land use management system in which trees or shrubs are grown around or among crops or pastureland.",
+    "explanation_hi": "भूमि उपयोग प्रबंधन की एक प्रणाली जिसमें फसलों या चरागाहों के बीच या उनके आसपास पेड़ या झाड़ियाँ उगाई जाती हैं।"
+  },
+  {
+    "term_id": "PAT_0102",
+    "english": "Terracing",
+    "hindi": "सीढ़ीदार खेती",
+    "category": "SOIL_MANAGEMENT",
+    "aliases_en": ["Terrace Farming", "Step Farming"],
+    "aliases_hi": ["सीढ़ीनुमा खेती"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "A method of growing crops on sides of hills or mountains by planting on graduated terraces built into the slope.",
+    "explanation_hi": "पहाड़ियों या पहाड़ों की ढलानों पर सीढ़ीनुमा खेत बनाकर फसल उगाने की एक विधि।"
+  },
+  {
+    "term_id": "PAT_0103",
+    "english": "Fallow",
+    "hindi": "परती",
+    "category": "LAND_MANAGEMENT",
+    "aliases_en": ["Uncultivated Land", "Resting Land"],
+    "aliases_hi": ["पड़त भूमि", "खाली ज़मीन"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "Agricultural land that is left unseeded for a season or more to allow soil to recover its natural fertility.",
+    "explanation_hi": "कृषि भूमि जिसे मिट्टी की उर्वरता वापस पाने के लिए एक या अधिक मौसम के लिए बिना बोए छोड़ दिया जाता है।"
+  },
+  {
+    "term_id": "PAT_0104",
+    "english": "Threshing",
+    "hindi": "गहाई",
+    "category": "CROP_PROCESSING",
+    "aliases_en": ["Grain Separation"],
+    "aliases_hi": ["मड़ाई", "अनाज अलग करना"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "The process of loosening the edible part of grain from the straw or chaff to which it is attached.",
+    "explanation_hi": "अनाज के खाने योग्य हिस्से को भूसे या डंठल से अलग करने की प्रक्रिया।"
+  },
+  {
+    "term_id": "PAT_0105",
+    "english": "Winnowing",
+    "hindi": "ओसाई",
+    "category": "CROP_PROCESSING",
+    "aliases_en": ["Wind Cleaning"],
+    "aliases_hi": ["फटकना", "हवा से साफ़ करना"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "An agricultural method developed by ancient cultures for separating grain from chaff using wind flow.",
+    "explanation_hi": "हवा का उपयोग करके अनाज को भूसे से अलग करने की एक कृषि विधि।"
+  },
+  {
+    "term_id": "PAT_0106",
+    "english": "Vermicompost",
+    "hindi": "केंचुआ खाद",
+    "category": "FERTILIZER",
+    "aliases_en": ["Worm Castings", "Worm Compost"],
+    "aliases_hi": ["वर्मीकम्पोस्ट"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "The product of the composting process using various species of worms, usually red wigglers, to create organic fertilizer.",
+    "explanation_hi": "केंचुओं की विभिन्न प्रजातियों का उपयोग करके तैयार की गई उच्च गुणवत्ता वाली जैविक खाद।"
+  },
+  {
+    "term_id": "PAT_0107",
+    "english": "Cover Crop",
+    "hindi": "आवरण फसल",
+    "category": "CROP_MANAGEMENT",
+    "aliases_en": ["Catch Crop", "Green Manure"],
+    "aliases_hi": ["ढकवां फसल", "हरी खाद वाली फसल"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "A crop grown primarily for the protection and enrichment of the soil rather than for immediate harvest.",
+    "explanation_hi": "एक फसल जिसे मुख्य रूप से कटाई के बजाय मिट्टी की सुरक्षा और संवर्धन के लिए उगाया जाता है।"
+  },
+  {
+    "term_id": "PAT_0108",
+    "english": "Broadcasting",
+    "hindi": "छिटकवां बुवाई",
+    "category": "PLANTING_TECHNIQUE",
+    "aliases_en": ["Scatter Sowing", "Broadcast Seeding"],
+    "aliases_hi": ["बिखेर कर बुवाई"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "A method of seeding that involves scattering seed, either by hand or mechanically, over a relatively large area.",
+    "explanation_hi": "बीज बोने की एक विधि जिसमें हाथ या मशीन से बड़े क्षेत्र में बीज बिखेरे जाते हैं।"
+  },
+  {
+    "term_id": "PAT_0109",
+    "english": "Precision Agriculture",
+    "hindi": "सटीक कृषि",
+    "category": "AGRICULTURAL_TECHNOLOGY",
+    "aliases_en": ["Precision Farming", "Smart Farming"],
+    "aliases_hi": ["परिशुद्ध खेती", "स्मार्ट कृषि"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "A farming management concept based on observing, measuring, and responding to inter and intra-field crop variability using modern technology.",
+    "explanation_hi": "प्रौद्योगिकी का उपयोग करके फसल की परिवर्तनशीलता को देखने, मापने और उसके अनुसार प्रबंधन करने पर आधारित कृषि अवधारणा।"
+  },
+  {
+    "term_id": "PAT_0110",
+    "english": "Apiculture",
+    "hindi": "मधुमक्खी पालन",
+    "category": "ANIMAL_HUSBANDRY",
+    "aliases_en": ["Beekeeping"],
+    "aliases_hi": ["मौन पालन", "एपीकल्चर"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "The maintenance of bee colonies, commonly in man-made hives, for the commercial production of honey and wax.",
+    "explanation_hi": "शहद और अन्य उत्पादों के उत्पादन के लिए मानव निर्मित छत्तों में मधुमक्खी कॉलोनियों का रखरखाव।"
+  },
+  {
+    "term_id": "PAT_0111",
+    "english": "Sericulture",
+    "hindi": "रेशम कीट पालन",
+    "category": "ANIMAL_HUSBANDRY",
+    "aliases_en": ["Silk Farming"],
+    "aliases_hi": ["सेरीकल्चर"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "The rearing of silkworms for the production of raw silk.",
+    "explanation_hi": "रेशम के धागे के उत्पादन के लिए रेशम के कीड़ों को पालने की कृषि प्रक्रिया।"
+  },
+  {
+    "term_id": "PAT_0112",
+    "english": "Harrowing",
+    "hindi": "हैरोइंग",
+    "category": "SOIL_PREPARATION",
+    "aliases_en": ["Smoothing", "Clod Breaking"],
+    "aliases_hi": ["हेंगा चलाना", "पाटा लगाना"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "The process of breaking up and smoothing out the surface of the soil after plowing to prepare a seedbed.",
+    "explanation_hi": "बुवाई के लिए खेत तैयार करने हेतु जुताई के बाद मिट्टी के ढेलों को तोड़ने और सतह को समतल करने की प्रक्रिया।"
+  },
+  {
+    "term_id": "PAT_0113",
+    "english": "Weeding",
+    "hindi": "निराई",
+    "category": "CROP_MAINTENANCE",
+    "aliases_en": ["Weed Control", "Hoeing"],
+    "aliases_hi": ["गुड़ाई", "खरपतवार नियंत्रण"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "The process of removing unwanted plants that compete with crops for nutrients, sunlight, and water.",
+    "explanation_hi": "खेत या जमीन से अवांछित पौधों (खरपतवार) को हटाने की प्रक्रिया जो मुख्य फसल को नुकसान पहुंचाते हैं।"
+  },
+  {
+    "term_id": "PAT_0114",
+    "english": "Greenhouse",
+    "hindi": "ग्रीनहाउस",
+    "category": "CONTROLLED_ENVIRONMENT",
+    "aliases_en": ["Glasshouse", "Hothouse"],
+    "aliases_hi": ["पौधाघर", "हरितगृह"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "A structure with walls and roof made chiefly of transparent material, such as glass, in which plants requiring regulated climatic conditions are grown.",
+    "explanation_hi": "पारदर्शी सामग्री (जैसे कांच या प्लास्टिक) से बनी एक संरचना जिसमें पौधों को नियंत्रित जलवायु परिस्थितियों में उगाया जाता है।"
+  },
+  {
+    "term_id": "PAT_0115",
+    "english": "Agroecology",
+    "hindi": "कृषि पारिस्थितिकी",
+    "category": "SUSTAINABLE_FARMING",
+    "aliases_en": ["Ecological Agriculture"],
+    "aliases_hi": ["एग्रोइकोलॉजी"],
+    "do_not_translate": false,
+    "context": "agriculture",
+    "explanation_en": "The study of ecological processes applied to agricultural production systems to make them more sustainable.",
+    "explanation_hi": "कृषि उत्पादन प्रणालियों को टिकाऊ बनाने के लिए उन पर लागू होने वाले पारिस्थितिक प्रक्रियाओं का वैज्ञानिक अध्ययन।"
+  }
+,
+  {
+    "term_id": "PAT_0116",
+    "english": "Bootstrapping",
+    "hindi": "बूटस्ट्रैपिंग",
+    "category": "STARTUP_FINANCE",
+    "aliases_en": ["Self-funding", "Organic Growth"],
+    "aliases_hi": ["स्व-वित्तपोषण"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "Starting and growing a business using only personal funds and operating revenues, without outside investment.",
+    "explanation_hi": "बाहरी निवेश के बिना, केवल व्यक्तिगत धन और परिचालन राजस्व का उपयोग करके व्यवसाय शुरू करना और बढ़ाना।"
+  },
+  {
+    "term_id": "PAT_0117",
+    "english": "Venture Capital",
+    "hindi": "उद्यम पूंजी",
+    "category": "STARTUP_FINANCE",
+    "aliases_en": ["VC", "Risk Capital"],
+    "aliases_hi": ["वेंचर कैपिटल", "जोखिम पूंजी"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "Financing provided by investors to startup companies and small businesses that are believed to have long-term growth potential.",
+    "explanation_hi": "निवेशकों द्वारा उन स्टार्टअप और छोटे व्यवसायों को प्रदान किया जाने वाला वित्तपोषण जिनमें दीर्घकालिक विकास की संभावना मानी जाती है।"
+  },
+  {
+    "term_id": "PAT_0118",
+    "english": "Angel Investor",
+    "hindi": "एंजेल निवेशक",
+    "category": "STARTUP_FINANCE",
+    "aliases_en": ["Seed Investor", "Private Investor", "Business Angel"],
+    "aliases_hi": ["देवदूत निवेशक"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "A high-net-worth individual who provides financial backing for small startups or entrepreneurs, typically in exchange for ownership equity.",
+    "explanation_hi": "एक उच्च निवल मूल्य वाला व्यक्ति जो आमतौर पर स्वामित्व इक्विटी के बदले छोटे स्टार्टअप या उद्यमियों को वित्तीय सहायता प्रदान करता है।"
+  },
+  {
+    "term_id": "PAT_0119",
+    "english": "Pitch Deck",
+    "hindi": "पिच डेक",
+    "category": "BUSINESS_COMMUNICATION",
+    "aliases_en": ["Investor Presentation", "Slide Deck"],
+    "aliases_hi": ["निवेशक प्रस्तुति"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "A brief presentation created by entrepreneurs to provide investors with a quick overview of their business plan and startup vision.",
+    "explanation_hi": "उद्यमियों द्वारा निवेशकों को उनके व्यवसाय योजना और स्टार्टअप दृष्टिकोण का त्वरित अवलोकन प्रदान करने के लिए बनाई गई एक संक्षिप्त प्रस्तुति।"
+  },
+  {
+    "term_id": "PAT_0120",
+    "english": "Minimum Viable Product",
+    "hindi": "न्यूनतम व्यवहार्य उत्पाद",
+    "category": "PRODUCT_DEVELOPMENT",
+    "aliases_en": ["MVP"],
+    "aliases_hi": ["एमवीपी"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "A version of a new product with just enough features to satisfy early customers and provide feedback for future development.",
+    "explanation_hi": "नए उत्पाद का एक ऐसा संस्करण जिसमें शुरुआती ग्राहकों को संतुष्ट करने और भविष्य के विकास के लिए प्रतिक्रिया प्राप्त करने हेतु पर्याप्त विशेषताएं हों।"
+  },
+  {
+    "term_id": "PAT_0121",
+    "english": "Pivot",
+    "hindi": "पिवट",
+    "category": "BUSINESS_STRATEGY",
+    "aliases_en": ["Strategic Shift", "Direction Change"],
+    "aliases_hi": ["दिशा परिवर्तन", "कार्यनीतिक बदलाव"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "A fundamental shift in a startup's business strategy or product direction based on market feedback or changing conditions.",
+    "explanation_hi": "बाजार की प्रतिक्रिया या बदलती परिस्थितियों के आधार पर स्टार्टअप की व्यावसायिक रणनीति या उत्पाद की दिशा में एक बुनियादी बदलाव।"
+  },
+  {
+    "term_id": "PAT_0122",
+    "english": "Unicorn",
+    "hindi": "यूनिकॉर्न",
+    "category": "STARTUP_VALUATION",
+    "aliases_en": ["Billion-Dollar Startup"],
+    "aliases_hi": ["अरब-डॉलर का स्टार्टअप"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "A privately held startup company valued at over one billion US dollars.",
+    "explanation_hi": "एक अरब अमेरिकी डॉलर से अधिक के मूल्यांकन वाली एक निजी स्वामित्व वाली स्टार्टअप कंपनी।"
+  },
+  {
+    "term_id": "PAT_0123",
+    "english": "Incubator",
+    "hindi": "इनक्यूबेटर",
+    "category": "STARTUP_SUPPORT",
+    "aliases_en": ["Startup Incubator"],
+    "aliases_hi": ["नवप्रवर्तन केंद्र", "स्टार्टअप इनक्यूबेटर"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "An organization or program designed to help early-stage startups grow by providing workspace, mentorship, and resources.",
+    "explanation_hi": "एक संगठन या कार्यक्रम जिसे शुरुआती चरण के स्टार्टअप्स को कार्यस्थल, मार्गदर्शन और संसाधन प्रदान करके बढ़ने में मदद करने के लिए डिज़ाइन किया गया है।"
+  },
+  {
+    "term_id": "PAT_0124",
+    "english": "Value Proposition",
+    "hindi": "मूल्य प्रस्ताव",
+    "category": "MARKETING_STRATEGY",
+    "aliases_en": ["Unique Selling Proposition", "USP"],
+    "aliases_hi": ["अद्वितीय बिक्री प्रस्ताव"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "A clear statement that explains how a product solves customers' problems or improves their situation, and why they should buy it.",
+    "explanation_hi": "एक स्पष्ट कथन जो यह बताता है कि कोई उत्पाद ग्राहकों की समस्याओं को कैसे हल करता है और उन्हें इसे क्यों खरीदना चाहिए।"
+  },
+  {
+    "term_id": "PAT_0125",
+    "english": "Burn Rate",
+    "hindi": "बर्न रेट",
+    "category": "STARTUP_FINANCE",
+    "aliases_en": ["Cash Burn Rate", "Negative Cash Flow"],
+    "aliases_hi": ["नकदी खर्च दर"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "The rate at which a new company is spending its venture capital to finance overhead before generating positive cash flow.",
+    "explanation_hi": "वह दर जिस पर कोई नई कंपनी सकारात्मक नकदी प्रवाह उत्पन्न करने से पहले अपने खर्चों को पूरा करने के लिए अपनी उद्यम पूंजी खर्च कर रही है।"
+  },
+  {
+    "term_id": "PAT_0126",
+    "english": "Elevator Pitch",
+    "hindi": "एलेवेटर पिच",
+    "category": "BUSINESS_COMMUNICATION",
+    "aliases_en": ["Quick Pitch", "Value Pitch"],
+    "aliases_hi": ["संक्षिप्त प्रस्तुति"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "A short, persuasive speech used to spark interest in what an organization or entrepreneur does, lasting no longer than a short elevator ride.",
+    "explanation_hi": "एक संक्षिप्त और प्रभावशाली भाषण जिसका उपयोग किसी संगठन या उद्यमी के काम में रुचि जगाने के लिए किया जाता है, जो एक लिफ्ट की छोटी यात्रा से अधिक लंबा नहीं होता है।"
+  },
+  {
+    "term_id": "PAT_0127",
+    "english": "Crowdfunding",
+    "hindi": "क्राउडफंडिंग",
+    "category": "STARTUP_FINANCE",
+    "aliases_en": ["Crowd Financing", "Micro-funding"],
+    "aliases_hi": ["जन-वित्तपोषण"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "The practice of funding a project or venture by raising small amounts of money from a large number of people, typically via the internet.",
+    "explanation_hi": "आमतौर पर इंटरनेट के माध्यम से बड़ी संख्या में लोगों से छोटी-छोटी धनराशि जुटाकर किसी परियोजना या उद्यम को वित्तपोषित करने की प्रथा।"
+  },
+  {
+    "term_id": "PAT_0128",
+    "english": "Disruptive Innovation",
+    "hindi": "विघटनकारी नवाचार",
+    "category": "BUSINESS_STRATEGY",
+    "aliases_en": ["Market Disruption"],
+    "aliases_hi": ["क्रांतिकारी नवाचार"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "An innovation that creates a new market and value network, eventually displacing established market-leading firms, products, and alliances.",
+    "explanation_hi": "एक ऐसा नवाचार जो एक नया बाजार और मूल्य नेटवर्क बनाता है, और अंततः स्थापित बाजार की अग्रणी कंपनियों और उत्पादों को विस्थापित कर देता है।"
+  },
+  {
+    "term_id": "PAT_0129",
+    "english": "Business Model",
+    "hindi": "व्यापार मॉडल",
+    "category": "BUSINESS_STRATEGY",
+    "aliases_en": ["Revenue Model", "Business Plan"],
+    "aliases_hi": ["व्यावसायिक प्रतिमान"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "A company's core strategy for profitably doing business, identifying its target market, products, and revenue streams.",
+    "explanation_hi": "लाभप्रद रूप से व्यवसाय करने के लिए कंपनी की मुख्य रणनीति, जिसमें उसके लक्षित बाजार, उत्पादों और राजस्व स्रोतों की पहचान शामिल है।"
+  },
+  {
+    "term_id": "PAT_0130",
+    "english": "Seed Funding",
+    "hindi": "सीड फंडिंग",
+    "category": "STARTUP_FINANCE",
+    "aliases_en": ["Seed Capital", "Initial Funding"],
+    "aliases_hi": ["प्रारंभिक वित्तपोषण", "बीज पूंजी"],
+    "do_not_translate": false,
+    "context": "entrepreneurship",
+    "explanation_en": "The first official equity funding stage of a startup, used to finance the early stages of product development and market research.",
+    "explanation_hi": "किसी स्टार्टअप का पहला आधिकारिक इक्विटी फंडिंग चरण, जिसका उपयोग उत्पाद विकास और बाजार अनुसंधान के शुरुआती चरणों को वित्तपोषित करने के लिए किया जाता है।"
+  }
+
+]
