@@ -1,282 +1,237 @@
-// Predefined statutory database simulating backend response contract (SIH26045)
-const STATUTORY_DB = {
-  ashwagandha: {
-    answer: "Under Section 3(p) of the Patents Act, 1970, an invention which in effect is traditional knowledge or an aggregation of known properties of traditional components is barred from patentability. Because Withania somnifera (Ashwagandha) is documented in classical Ayurvedic texts, raw extracts fail novelty tests unless synergistic non-obvious efficacy (§ 3(e)) is demonstrated. Additionally, approval from the National Biodiversity Authority (NBA) via Form III is mandatory prior to grant under BDA Rules 2024.",
-    citations: [
-      {
-        document_id: "patents_act_1970",
-        source_name: "The Patents Act, 1970",
-        page_number: 42,
-        section: "Section 3(p)",
-        text: "an invention which in effect is traditional knowledge or which is an aggregation or duplication of known properties of traditionally known component or components.",
-        bbox: [100, 200, 500, 240]
-      },
-      {
-        document_id: "bda_rules_2024",
-        source_name: "Biological Diversity Rules, 2024",
-        page_number: 14,
-        section: "Rule 18 / Form III",
-        text: "Any person applying for any intellectual property right for an invention based on any biological resource obtained from India shall make an application in Form III to National Biodiversity Authority.",
-        bbox: [80, 150, 480, 210]
-      }
-    ]
-  },
-  classical: {
-    answer: "Classical Ayurvedic formulations listed in the First Schedule authoritative texts of the Drugs and Cosmetics Act, 1940 (e.g., Charaka Samhita, Sushruta Samhita) cannot be patented as they constitute established prior art (TKDL). Licensing must proceed through State Licensing Authorities (SLA) under Rule 153.",
-    citations: [
-      {
-        document_id: "dc_act_1940",
-        source_name: "Drugs & Cosmetics Act, 1940",
-        page_number: 18,
-        section: "Section 3(a) & First Schedule",
-        text: "Ayurvedic, Siddha or Unani drug includes all medicines intended for internal or external use manufactured exclusively in accordance with the formulae in the authoritative books specified in the First Schedule.",
-        bbox: [90, 180, 490, 230]
-      }
-    ]
-  },
-  abs: {
-    answer: "Access and Benefit Sharing (ABS) compliance is mandatory for commercial exploitation or patenting involving Indian biological resources under BDA Rules 2024. Indian commercial entities must file Form I with the State Biodiversity Board (SBB), while foreign entities or IPR filers require National Biodiversity Authority clearance via Form III.",
-    citations: [
-      {
-        document_id: "bda_rules_2024",
-        source_name: "Biological Diversity Rules, 2024",
-        page_number: 12,
-        section: "Section 6(1) & Rule 18",
-        text: "No person shall apply for any intellectual property right by whatever name called in or outside India for any invention based on any research or information on a biological resource obtained from India without previous approval of National Biodiversity Authority.",
-        bbox: [110, 210, 520, 260]
-      }
-    ]
-  },
- counsel: {
-    answer: "Safe Abstention Protocol Activated: The submitted formulation demonstrates non-obvious synergistic extraction processes that cannot be summarily evaluated under standard TKDL prior-art exclusions (§ 3(p)). Your docket has been flagged for human evaluation and escalated to an empaneled AYUSH IP Facilitator under the SIPP Framework.",
-    citations: [
-      {
-        document_id: "patents_act_1970",
-        source_name: "The Patents Act, 1970",
-        page_number: 1,
-        section: "Section 77 / SIPP Guidelines",
-        text: "Facilitators shall provide advisory, drafting, and statutory prosecution support for micro, small and start-up entities before the Patent Office."
-      }
-    ]
-  },
-  abstain: {
-    answer: "The available statutory sources and TKDL databases do not provide sufficient evidence for a reliable regulatory determination for this query. Human review by an AYUSH patent facilitator is recommended.",
-    citations: []
-  }
-};
+let currentJurisdiction = "india";
+let currentPage = 1;
 
-// UI Zoom State
-let currentZoom = 100;
+// PDF ka folder path decide karne wala function
+function getDocumentRelativePath(docName, jurisdiction) {
+  const isIntl = jurisdiction.toLowerCase() === "international";
+  const folder = isIntl ? "international" : "indian";
+  
+  // Default files agar backend se naam na aaye
+  const defaultDoc = isIntl ? "pct_international.pdf" : "patentact_1970_india.pdf";
+  const finalDoc = (docName && docName.trim()) ? docName.trim() : defaultDoc;
 
-// Update Right-Column PDF Viewer
-function updateEvidenceViewer(cit) {
-  const docTitle = document.getElementById("docTitle");
-  const pdfEmbed = document.getElementById("pdfEmbed");
-  const pageInput = document.getElementById("pageNumberInput");
+  return `/documents/${folder}/${encodeURIComponent(finalDoc)}`;
+}
 
-  if (!cit) {
-    if (docTitle) docTitle.innerText = "Safe Abstention Mode";
-    if (pageInput) pageInput.value = 1;
-    return;
-  }
+let currentDocUrl = getDocumentRelativePath("patentact_1970_india.pdf", "india");
+// 1. Initial Modal Action
+function selectInitialJurisdiction(jurisdiction) {
+  setJurisdiction(jurisdiction);
+  const modal = document.getElementById("jurisdiction-modal");
+  if (modal) modal.style.display = "none";
+}
 
-  // Update title text cleanly
-  if (docTitle) docTitle.innerText = `${cit.source_name} (${cit.section})`;
-  if (pageInput) pageInput.value = cit.page_number;
+// 2. Jurisdiction Switcher Handler
+function setJurisdiction(jurisdiction) {
+  currentJurisdiction = jurisdiction;
 
-  // Jump real embedded PDF directly to cited page (forcing browser cache bypass)
-  if (pdfEmbed) {
-    const timestamp = Date.now();
-    pdfEmbed.src = `/sample.pdf?t=${timestamp}#page=${cit.page_number}&view=FitH`;
+  const btnIndia = document.getElementById("btn-jurisdiction-india");
+  const btnIntl = document.getElementById("btn-jurisdiction-intl");
+
+  if (jurisdiction === "india") {
+    btnIndia.className = "px-3.5 py-1 rounded text-xs font-bold transition bg-[#c8963e] text-slate-900 shadow";
+    btnIntl.className = "px-3.5 py-1 rounded text-xs font-medium text-slate-300 hover:text-white transition";
+  } else {
+    btnIntl.className = "px-3.5 py-1 rounded text-xs font-bold transition bg-[#c8963e] text-slate-900 shadow";
+    btnIndia.className = "px-3.5 py-1 rounded text-xs font-medium text-slate-300 hover:text-white transition";
   }
 }
 
-// Append exchange and keep prior messages
-function appendExchange(queryText, scenario) {
-  const chatFeed = document.getElementById("chatFeed");
-  if (!chatFeed) return;
+// 3. Screen Splitting & PDF Display
+function openPdfViewer(pdfUrl, title, page = 1) {
+  const chatPanel = document.getElementById("chat-panel");
+  const pdfPanel = document.getElementById("pdf-panel");
+  const pdfFrame = document.getElementById("pdf-frame");
+  const pdfTitle = document.getElementById("pdf-title");
+  const pageInput = document.getElementById("pdf-page-num");
 
-  // Append user bubble
-  const userRow = document.createElement("div");
-  userRow.className = "msg-row user";
-  userRow.innerHTML = `<div class="msg-bubble user-bubble">${queryText}</div>`;
-  chatFeed.appendChild(userRow);
+  const cleanUrl = (pdfUrl || "").split("#")[0];
+  const targetPage = Number(page) || 1;
 
-  // Append bot bubble
-  const botRow = document.createElement("div");
-  botRow.className = "msg-row bot";
+  currentDocUrl = cleanUrl;
+  currentPage = targetPage;
 
-  let citationsHtml = "";
-  if (scenario.citations && scenario.citations.length > 0) {
-    citationsHtml = `
-      <div class="citation-header"><i class="fa-solid fa-file-circle-check"></i> Statutory Evidence Citations (Click to inspect source)</div>
-      <div class="citation-list"></div>
-    `;
+  // Split into 50-50 view
+  if (chatPanel) {
+    chatPanel.classList.remove("w-full");
+    chatPanel.classList.add("w-1/2");
   }
 
-  botRow.innerHTML = `
-    <div class="msg-bubble bot-bubble">
-      <p class="legal-summary">${scenario.answer}</p>
-      ${citationsHtml}
+  if (pdfPanel) {
+    pdfPanel.classList.remove("hidden");
+  }
+
+  if (pdfTitle) {
+    pdfTitle.innerHTML = `<i class="fa-solid fa-file-pdf text-rose-500"></i> ${escapeHtml(title)}`;
+  }
+
+  if (pageInput) {
+    pageInput.value = targetPage;
+  }
+
+  if (pdfFrame) {
+    // Force re-render taaki page jump execute ho
+    pdfFrame.src = "about:blank";
+    setTimeout(() => {
+      pdfFrame.src = `${cleanUrl}#page=${targetPage}&zoom=83`;
+    }, 50);
+  }
+}
+
+function closePdfPanel() {
+  const chatPanel = document.getElementById("chat-panel");
+  const pdfPanel = document.getElementById("pdf-panel");
+
+  pdfPanel.classList.add("hidden");
+  chatPanel.classList.remove("w-1/2");
+  chatPanel.classList.add("w-full");
+}
+
+function nextPdfPage() {
+  currentPage += 1;
+  openPdfViewer(currentDocUrl, document.getElementById("pdf-title").innerText, currentPage);
+}
+
+function prevPdfPage() {
+  if (currentPage > 1) {
+    currentPage -= 1;
+    openPdfViewer(currentDocUrl, document.getElementById("pdf-title").innerText, currentPage);
+  }
+}
+
+// // 4. Query Submission & Live Assistant Card Generation
+async function handleQuerySubmit(event) {
+  event.preventDefault();
+  const input = document.getElementById("query-input");
+  const chatHistory = document.getElementById("chat-history");
+  const emptyState = document.getElementById("empty-state");
+  const query = input.value.trim();
+
+  if (!query) return;
+
+  // Clear initial empty placeholder
+  if (emptyState) emptyState.remove();
+
+  // 1. Append User Message (Exact Navy Bubble Style)
+  chatHistory.innerHTML += `
+    <div class="flex justify-end">
+      <div class="bg-[#0b3b60] text-white text-sm font-medium rounded-lg px-5 py-3 max-w-xl shadow">
+        ${escapeHtml(query)}
+      </div>
     </div>
   `;
-  chatFeed.appendChild(botRow);
 
-  // Populate interactive citation cards for this bubble
-  if (scenario.citations && scenario.citations.length > 0) {
-    const list = botRow.querySelector(".citation-list");
-    scenario.citations.forEach((cit, idx) => {
-      const card = document.createElement("div");
-      card.className = `citation-card ${idx === 0 ? "active" : ""}`;
-      card.innerHTML = `
-        <div class="citation-meta">
-          <span>${cit.source_name}</span>
-          <span>Page ${cit.page_number}</span>
+  // 2. Loading State
+  const loaderId = "loader-" + Date.now();
+  chatHistory.innerHTML += `
+    <div id="${loaderId}" class="flex justify-start text-xs text-slate-500 italic items-center gap-2">
+      <i class="fa-solid fa-circle-notch fa-spin text-[#0b3b60]"></i>
+      Evaluating against ${currentJurisdiction.toUpperCase()} regulatory corpus...
+    </div>
+  `;
+  chatHistory.scrollTop = chatHistory.scrollHeight;
+  input.value = "";
+
+  try {
+    const res = await fetch("http://127.0.0.1:8000/api/v1/query", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ 
+        query: query,
+        jurisdiction: currentJurisdiction 
+      }),
+    });
+
+   const data = await res.json();
+console.log("Backend Full Response:", data);
+console.log("Backend Citations:", data.citations);
+
+    // Citations Builder with Dynamic Folder Routing
+    let citationsHtml = "";
+    if (data.citations && data.citations.length > 0) {
+      citationsHtml = `
+        <div class="pt-4 mt-4 border-t border-slate-200">
+          <p class="text-[11px] font-bold text-[#0b3b60] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+            <i class="fa-solid fa-file-lines text-[#0b3b60]"></i> STATUTORY EVIDENCE CITATIONS (CLICK TO INSPECT SOURCE)
+          </p>
+          <div class="space-y-2.5">
+            ${data.citations.map((c) => {
+              const rawDoc = c.source_name || c.source_doc || "";
+        let docName = "patentact_1970_india.pdf";
+
+        const lowerDoc = rawDoc.toLowerCase();
+        if (lowerDoc.includes("trade mark") || lowerDoc.includes("trademark")) {
+          docName = "trade mark act_1999_india.pdf";
+        } else if (lowerDoc.includes("copyright")) {
+          docName = "copyrightrules_1957_india.pdf";
+        } else if (lowerDoc.includes("rules") || lowerDoc.includes("2024")) {
+          docName = "patent_rules_2024_india.pdf";
+        } else if (lowerDoc.includes("trips")) {
+          docName = "TRIPS_international.pdf";
+        } else if (lowerDoc.includes("paris")) {
+          docName = "Paris_Convention_international.pdf";
+        } else if (lowerDoc.includes("pct")) {
+          docName = "pct_international.pdf";
+        } else if (currentJurisdiction === "international") {
+          docName = "pct_international.pdf";
+        }
+
+        const pageNum = parseInt(c.page_number || c.page || 1, 10);
+              const pdfUrl = getDocumentRelativePath(docName, currentJurisdiction);
+              const sectionText = c.section || "Relevant Clause";
+             const clauseText = c.highlight_text || c.text || "";
+              
+              return `
+               <div data-url="${pdfUrl}" data-doc="${escapeHtml(docName)}" data-page="${pageNum}" onclick="openPdfViewer(this.dataset.url, this.dataset.doc, parseInt(this.dataset.page, 10))"
+                     class="cursor-pointer border border-[#eab308]/60 bg-[#fffdf5] hover:bg-[#fef9e7] rounded-lg p-3.5 text-xs transition duration-150 shadow-sm">
+                  <div class="flex justify-between font-bold text-[#92400e]">
+                    <span class="text-[13px]">${escapeHtml(docName)}</span>
+                    <span class="text-slate-800 font-semibold">Page ${pageNum}</span>
+                  </div>
+                  <div class="font-bold text-[#b45309] my-1 text-[12px]">${escapeHtml(sectionText)}</div>
+                  <p class="italic text-slate-600 leading-relaxed font-['Noto_Sans']">
+                    "${escapeHtml(clauseText)}"
+                  </p>
+                </div>
+              `;
+            }).join("")}
+          </div>
         </div>
-        <div class="citation-section">${cit.section}</div>
-        <div class="citation-text">"${cit.text}"</div>
       `;
 
-      card.addEventListener("click", () => {
-        document.querySelectorAll(".citation-card").forEach(c => c.classList.remove("active"));
-        card.classList.add("active");
-        updateEvidenceViewer(cit);
-      });
-
-      list.appendChild(card);
-    });
-
-    // Default inspect first citation
-    updateEvidenceViewer(scenario.citations[0]);
-  } else {
-    updateEvidenceViewer(null);
-  }
-
-  // Scroll smoothly down to newly appended messages
-  chatFeed.scrollTop = chatFeed.scrollHeight;
-}
-
-// Event Listeners Setup
-document.addEventListener("DOMContentLoaded", () => {
-  // Input Query Submission
-  const chatForm = document.getElementById("chatForm");
-  const queryInput = document.getElementById("queryInput");
-
-  if (chatForm && queryInput) {
-    chatForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const query = queryInput.value.trim();
-      if (!query) return;
-
-      const q = query.toLowerCase();
-      let matchedScenario = STATUTORY_DB.abstain;
-
-      if (q.includes("ashwagandha") || q.includes("extract") || q.includes("patent")) {
-        matchedScenario = STATUTORY_DB.ashwagandha;
-      } else if (q.includes("classical") || q.includes("samhita") || q.includes("text") || q.includes("charaka")) {
-        matchedScenario = STATUTORY_DB.classical;
-      } else if (q.includes("abs") || q.includes("nba") || q.includes("biodiversity") || q.includes("form")) {
-        matchedScenario = STATUTORY_DB.abs;
-      }
-
-      appendExchange(query, matchedScenario);
-      queryInput.value = "";
-    });
-  }
-
-  // PDF Viewer Toolbar: Zoom Controls
-  const zoomInBtn = document.getElementById("zoomInBtn");
-  const zoomOutBtn = document.getElementById("zoomOutBtn");
-  const zoomLevel = document.getElementById("zoomLevel");
-  const pageSheet = document.getElementById("pageSheet");
-
-  if (zoomInBtn && pageSheet) {
-    zoomInBtn.addEventListener("click", () => {
-      if (currentZoom < 140) {
-        currentZoom += 10;
-        zoomLevel.innerText = `${currentZoom}%`;
-        pageSheet.style.transform = `scale(${currentZoom / 100})`;
-      }
-    });
-  }
-
-  if (zoomOutBtn && pageSheet) {
-    zoomOutBtn.addEventListener("click", () => {
-      if (currentZoom > 70) {
-        currentZoom -= 10;
-        zoomLevel.innerText = `${currentZoom}%`;
-        pageSheet.style.transform = `scale(${currentZoom / 100})`;
-      }
-    });
-  }
-
-  // PDF Viewer Toolbar: Page Navigation
-  const prevPageBtn = document.getElementById("prevPageBtn");
-  const nextPageBtn = document.getElementById("nextPageBtn");
-  const pageInput = document.getElementById("pageNumberInput");
-  const sheetPageNum = document.getElementById("sheetPageNum");
-  const pdfEmbed = document.getElementById("pdfEmbed");
-
-  if (prevPageBtn && pageInput) {
-    prevPageBtn.addEventListener("click", () => {
-      let cur = parseInt(pageInput.value, 10);
-      if (cur > 1) {
-        pageInput.value = cur - 1;
-        if (sheetPageNum) sheetPageNum.innerText = `PAGE ${pageInput.value}`;
-        if (pdfEmbed) pdfEmbed.src = `/sample.pdf#page=${pageInput.value}&view=FitH`;
-      }
-    });
-  }
-
-  if (nextPageBtn && pageInput) {
-    nextPageBtn.addEventListener("click", () => {
-      let cur = parseInt(pageInput.value, 10);
-      if (cur < 120) {
-        pageInput.value = cur + 1;
-        if (sheetPageNum) sheetPageNum.innerText = `PAGE ${pageInput.value}`;
-        if (pdfEmbed) pdfEmbed.src = `/sample.pdf#page=${pageInput.value}&view=FitH`;
-      }
-    });
-  }
-
-  // Jurisdiction Toggle
-  const btnIndia = document.getElementById("btnIndia");
-  const btnIntl = document.getElementById("btnIntl");
-
-  if (btnIndia && btnIntl) {
-    btnIndia.addEventListener("click", () => {
-      btnIndia.classList.add("active");
-      btnIntl.classList.remove("active");
-    });
-    btnIntl.addEventListener("click", () => {
-      btnIntl.classList.add("active");
-      btnIndia.classList.remove("active");
-    });
-  }
-
-  // Dynamic Query Injection via Landing Page Mode
-    const urlParams = new URLSearchParams(window.location.search);
-    const currentMode = urlParams.get("mode") || "classifier";
-
-    if (currentMode === "prior_art" || currentMode === "tkdl") {
-      appendExchange(
-        "Evaluate Section 3(p) prior-art conflict for classical formulation documented in TKDL.",
-        STATUTORY_DB.classical
-      );
-    } else if (currentMode === "abs") {
-      appendExchange(
-        "What are the mandatory ABS clearance and Form III requirements under Biological Diversity Rules 2024?",
-        STATUTORY_DB.abs
-      );
-    } else if (currentMode === "counsel" || currentMode === "facilitator") {
-      appendExchange(
-        "Request statutory evaluation by an empaneled AYUSH patent facilitator for complex poly-herbal extract.",
-        STATUTORY_DB.abstain
-      );
-    } else {
-      appendExchange(
-        "Can I patent a modified Ashwagandha formulation in India?",
-        STATUTORY_DB.ashwagandha
-      );
+      // Automatically split screen and open first citation PDF
+      const firstCite = data.citations[0];
+      const firstDocName = firstCite.source_doc || (currentJurisdiction === "international" ? "pct_international.pdf" : "patentact_1970_india.pdf");
+      const firstDocUrl = getDocumentRelativePath(firstDocName, currentJurisdiction);
+      
+      openPdfViewer(firstDocUrl, firstDocName, firstCite.page || 1);
     }
-});
+
+    // 3. Append Deliberation Box
+    chatHistory.innerHTML += `
+      <div class="flex justify-start w-full">
+        <div class="bg-white border border-slate-200 border-l-4 border-l-[#0b3b60] rounded-lg p-5 w-full shadow-sm text-[13px] text-slate-800 leading-relaxed">
+          <p class="mb-2">${escapeHtml(data.answer)}</p>
+          ${citationsHtml}
+        </div>
+      </div>
+    `;
+    chatHistory.scrollTop = chatHistory.scrollHeight;
+
+  } catch (err) {
+    document.getElementById(loaderId)?.remove();
+    chatHistory.innerHTML += `
+      <div class="text-rose-700 text-xs bg-rose-50 border border-rose-200 p-3 rounded-md">
+        Failed to deliberate: ${escapeHtml(err.message)}
+      </div>
+    `;
+    chatHistory.scrollTop = chatHistory.scrollHeight;
+  }
+}
+// HTML sanitize function (Error Fix)
+function escapeHtml(text) {
+  if (text === null || text === undefined) return "";
+  const div = document.createElement("div");
+  div.textContent = String(text);
+  return div.innerHTML;
+}

@@ -1,116 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayur-IPR Regulatory Decision Support System | Ministry of Ayush</title>
-  <link rel="stylesheet" href="/workspace.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayur-IPR Statutory Evaluation System | Ministry of Ayush</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Official Top Navigation -->
-  <header class="top-nav">
-    <div class="nav-left">
-      <a href="IPSAKTI.HTML" class="back-link" title="Return to Portal">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./workspace.css" />
+</head>
+<body class="bg-[#f8fafc] text-slate-900 font-['Noto_Sans'] h-screen flex flex-col overflow-hidden">
+
+ <!-- ================= POPUP MODAL: OFFICIAL GOV STYLE ================= -->
+<div id="jurisdiction-modal" class="fixed inset-0 bg-[#0c233c]/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full border border-slate-300 overflow-hidden animate-modalIn">
+    
+    <!-- Top Indian Tricolor Header Strip -->
+    <div class="h-1.5 w-full flex">
+      <div class="h-full w-1/3 bg-[#FF9933]"></div>
+      <div class="h-full w-1/3 bg-white"></div>
+      <div class="h-full w-1/3 bg-[#138808]"></div>
+    </div>
+
+    <div class="p-6 md:p-8 text-center">
+      <!-- Official Emblem / Scale Seal -->
+      <div class="h-16 w-16 rounded-full bg-[#0c233c]/5 border border-[#c8963e]/40 flex items-center justify-center mx-auto mb-4 text-[#0c233c] shadow-inner">
+        <i class="fa-solid fa-scale-balanced text-2xl text-[#c8963e]"></i>
+      </div>
+
+      <div class="text-[11px] font-bold text-[#0c233c] uppercase tracking-widest mb-1">
+        Ministry of Ayush • Government of India
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 tracking-tight mb-2">
+        Select Regulatory Jurisdiction
+      </h3>
+      <p class="text-xs text-slate-600 mb-6 max-w-sm mx-auto leading-relaxed">
+        Choose your statutory deliberation framework before evaluating traditional Ayurvedic formulations.
+      </p>
+
+      <!-- Selection Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left">
+        
+        <!-- India Option -->
+        <button 
+          type="button"
+          onclick="selectInitialJurisdiction('india')"
+          class="group relative p-4 rounded-md border-2 border-[#0c233c] bg-[#f8fafc] hover:bg-[#0c233c] transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md"
+        >
+          <div class="flex items-center justify-between mb-2">
+            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-bold bg-[#FF9933]/15 text-[#b45309] border border-[#FF9933]/30 group-hover:bg-white/20 group-hover:text-amber-200 group-hover:border-amber-300/40">
+              <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" class="h-2.5 w-3.5 object-cover rounded-xs inline" alt="IN" />
+              DOMESTIC
+            </span>
+            <i class="fa-solid fa-circle-check text-xs text-[#0c233c] group-hover:text-amber-400 transition"></i>
+          </div>
+          <div class="text-sm font-bold text-[#0c233c] group-hover:text-white transition">
+            India (IPO / Ayush)
+          </div>
+          <p class="text-[11px] text-slate-500 group-hover:text-slate-200 mt-1 line-clamp-2 transition leading-tight">
+            Patents Act 1970 § 3(p), 3(e) & NBA Rules 2024
+          </p>
+        </button>
+
+        <!-- International Option -->
+        <button 
+          type="button"
+          onclick="selectInitialJurisdiction('international')"
+          class="group relative p-4 rounded-md border border-slate-300 bg-white hover:border-[#0c233c] hover:bg-[#0c233c] transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md"
+        >
+          <div class="flex items-center justify-between mb-2">
+            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200 group-hover:bg-white/20 group-hover:text-slate-200 group-hover:border-slate-400">
+              <i class="fa-solid fa-earth-americas text-[10px]"></i>
+              GLOBAL
+            </span>
+            <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-white transition"></i>
+          </div>
+          <div class="text-sm font-bold text-slate-800 group-hover:text-white transition">
+            International (PCT)
+          </div>
+          <p class="text-[11px] text-slate-500 group-hover:text-slate-200 mt-1 line-clamp-2 transition leading-tight">
+            WIPO, USPTO & EPO Cross-border Provisions
+          </p>
+        </button>
+
+      </div>
+
+      <div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-center gap-1.5 text-[11px] text-slate-400">
+        <i class="fa-solid fa-shield-halved text-[10px]"></i>
+        Statutory Data Verified by Ayush Regulatory Cell
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ================= TOP HEADER (EXACT THEME MATCH) ================= -->
+  <header class="bg-[#0b3b60] text-white px-5 py-2.5 border-b border-[#133254] flex items-center justify-between shrink-0 select-none">
+    <div class="flex items-center gap-4">
+      <a href="./IPSAKTI.HTML" class="h-8 w-8 rounded border border-slate-600 hover:border-white flex items-center justify-center text-slate-300 hover:text-white transition text-xs">
         <i class="fa-solid fa-arrow-left"></i>
       </a>
-      <div class="brand">
-        <i class="fa-solid fa-scale-balanced emblem-icon"></i>
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-scale-balanced text-[#d4af37] text-2xl"></i>
         <div>
-          <strong>Ayur-IPR Statutory Evaluation System</strong>
-          <span class="sub-brand">Decision Support System | Ministry of Ayush</span>
+          <h1 class="text-base font-bold tracking-tight leading-tight">Ayur-IPR Statutory Evaluation System</h1>
+          <p class="text-[11px] text-slate-300 font-normal">Decision Support System | Ministry of Ayush</p>
         </div>
       </div>
     </div>
 
-    <!-- Jurisdiction & Compliance Controls -->
-    <div class="nav-right">
-      <div class="jurisdiction-box">
-        <label for="btnIndia">Jurisdiction:</label>
-        <div class="toggle-group">
-          <button type="button" class="btn-toggle active" id="btnIndia">India</button>
-          <button type="button" class="btn-toggle" id="btnIntl">International (PCT)</button>
+    <!-- Jurisdiction Switcher & Lang -->
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 text-xs">
+        <span class="text-slate-300 font-medium">Jurisdiction:</span>
+        <div class="bg-[#071728] p-1 rounded-md flex items-center gap-1 border border-slate-700">
+          <button id="btn-jurisdiction-india" class="px-3.5 py-1 rounded text-xs font-bold transition bg-[#c8963e] text-slate-900 shadow" onclick="setJurisdiction('india')">
+            India
+          </button>
+          <button id="btn-jurisdiction-intl" class="px-3.5 py-1 rounded text-xs font-medium text-slate-300 hover:text-white transition" onclick="setJurisdiction('international')">
+            International (PCT)
+          </button>
         </div>
       </div>
-      <div class="lang-indicator">
-        <i class="fa-solid fa-globe"></i> EN | HI
-      </div>
+
+      <button class="flex items-center gap-1.5 px-3 py-1.5 rounded border border-slate-700 bg-[#071728] text-xs font-semibold text-slate-200 hover:text-white transition">
+        <i class="fa-solid fa-globe text-[11px]"></i>
+        <span>EN | HI</span>
+      </button>
     </div>
   </header>
 
-  <!-- Two-Column Regulatory Workspace -->
-  <main class="workspace-grid">
-
-    <!-- LEFT COLUMN: Grounded Chat & Citation Ledger -->
-    <section class="left-pane">
-      <div class="pane-header">
-        <span class="header-title">
-          <i class="fa-solid fa-comments"></i> STATUTORY DELIBERATION CONSOLE
+  <!-- ================= MAIN WORKSPACE (SPLIT LAYOUT) ================= -->
+  <main class="flex-1 flex overflow-hidden w-full relative" id="workspace-container">
+    
+    <!-- LEFT PANEL: STATUTORY DELIBERATION CONSOLE (Full width initially) -->
+    <section id="chat-panel" class="w-full flex flex-col h-full bg-white transition-all duration-300 border-r border-slate-300">
+      
+      <!-- Subheader Console Status Bar -->
+      <div class="px-6 py-2.5 bg-white border-b border-slate-200 flex items-center justify-between shrink-0">
+        <span class="text-xs font-bold text-[#0c233c] uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-comments text-[#0c233c]"></i> STATUTORY DELIBERATION CONSOLE
         </span>
-        <span class="evidence-status" id="evidenceStatus">
-          <span class="status-indicator live"></span> Regulatory Corpus Connected
+        <span class="inline-flex items-center gap-1.5 text-xs text-slate-700 font-medium">
+          <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+          Regulatory Corpus Connected
         </span>
       </div>
 
-      <div class="chat-feed" id="chatFeed">
-        <!-- Messages will be injected dynamically -->
+      <!-- Deliberation History -->
+      <div id="chat-history" class="flex-1 overflow-y-auto p-6 space-y-5 bg-[#ffffff]">
+        <!-- Initially empty state placeholder -->
+        <div id="empty-state" class="h-full flex flex-col items-center justify-center text-center text-slate-400">
+          <div class="h-16 w-16 rounded-full bg-slate-50 flex items-center justify-center text-3xl mb-3 border border-slate-200 text-[#0c233c]">
+            <i class="fa-solid fa-book-journal-whills"></i>
+          </div>
+          <p class="text-sm font-bold text-[#0c233c]">Deliberation Console Ready</p>
+          <p class="text-xs text-slate-400 max-w-sm mt-1">
+            Type your herbal composition claim below to verify Section 3(p), 3(e), and NBA clearance requirements.
+          </p>
+        </div>
       </div>
 
-      <!-- Live Input Bar -->
-      <form id="chatForm" class="input-container">
-        <input 
-          type="text" 
-          id="queryInput" 
-          placeholder="Enter formulation details or statutory query (e.g., 'Can I patent an Ashwagandha formulation?')..." 
-          autocomplete="off"
-          class="chat-input"
-        >
-        <button type="submit" class="btn-send" title="Evaluate Query">
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
-      </form>
+      <!-- Bottom Query Input Bar -->
+      <div class="p-4 border-t border-slate-200 bg-white shrink-0">
+        <form id="chat-form" onsubmit="handleQuerySubmit(event)" class="relative flex items-center">
+          <input 
+            id="query-input"
+            type="text" 
+            placeholder="Enter formulation details or statutory query (e.g., 'Can I patent an Ashwagandha formulation in India?')..."
+            class="w-full bg-white border border-slate-300 rounded-lg py-3 px-4 pr-14 text-sm focus:outline-none focus:border-[#0c233c] shadow-sm text-slate-800"
+            required
+          />
+          <button 
+            type="submit" 
+            id="submit-btn" 
+            class="absolute right-2 bg-[#0b3b60] hover:bg-[#006699] text-white rounded-md h-9 w-10 flex items-center justify-center transition shadow-sm"
+          >
+            <i class="fa-solid fa-paper-plane text-xs"></i>
+          </button>
+        </form>
+      </div>
     </section>
 
-  <!-- RIGHT COLUMN: Real PDF Evidence Viewer -->
-    <section class="right-pane">
-      <!-- Toolbar -->
-      <div class="pane-header pdf-toolbar">
-        <div class="toolbar-left">
-          <i class="fa-solid fa-file-pdf" style="color: #ef4444; margin-right: 8px;"></i>
-          <span class="header-title" id="docTitle">The Patents Act, 1970</span>
-        </div>
-        <div class="toolbar-controls">
-          <button type="button" class="btn-tb" id="prevPageBtn" title="Previous Page"><i class="fa-solid fa-chevron-up"></i></button>
-          <span class="page-counter">
-            Page <input type="number" id="pageNumberInput" value="42" min="1" max="150" class="page-input">
-          </span>
-          <button type="button" class="btn-tb" id="nextPageBtn" title="Next Page"><i class="fa-solid fa-chevron-down"></i></button>
-          <div class="tb-divider"></div>
-          <a href="/sample.pdf" download="The_Patents_Act_1970.pdf" class="btn-tb" title="Download Official PDF">
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Real PDF Viewer Stage -->
-      <div class="document-stage" id="documentStage" style="position: relative; width: 100%; height: calc(100% - 48px); padding: 0; overflow: hidden;">
-        <!-- Golden Highlight Overlay Layer -->
+    <!-- RIGHT PANEL: EVIDENCE PDF VIEWER (Hidden initially, opens on query or citation click) -->
+    <section id="pdf-panel" class="hidden w-1/2 bg-[#202936] flex flex-col h-full transition-all duration-300 border-l border-slate-300">
+      <div class="bg-[#1a2330] text-white px-4 py-2.5 flex items-center justify-between text-xs shrink-0 border-b border-slate-700">
+        <span id="pdf-title" class="font-semibold flex items-center gap-2 truncate text-slate-200">
+          <i class="fa-solid fa-file-pdf text-rose-500"></i> The Patents Act, 1970 (Section 3(p))
+        </span>
         
-        <iframe
-          id="pdfEmbed"
-          src="/sample.pdf#page=42&view=FitH"
-          type="application/pdf"
-          width="100%"
-          height="100%"
-          style="border: none; display: block;"
-        ></iframe>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-1 text-[11px] text-slate-300">
+            <button onclick="prevPdfPage()" class="hover:text-white px-1"><i class="fa-solid fa-chevron-up"></i></button>
+            <span>Page</span>
+            <input id="pdf-page-num" type="text" value="42" class="w-8 text-center bg-[#071728] border border-slate-700 rounded py-0.5 text-xs text-white" />
+            <button onclick="nextPdfPage()" class="hover:text-white px-1"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <button onclick="closePdfPanel()" class="text-slate-400 hover:text-white ml-2">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
       </div>
+      <iframe id="pdf-frame" src="" class="w-full flex-1 border-none bg-white"></iframe>
     </section>
 
   </main>
 
-  <script src="/workspace.js"></script>
+  <script src="./workspace.js"></script>
 </body>
 </html>
