@@ -1,13 +1,4 @@
-# Python cache
-__pycache__/
-*.pyc
-
-# Virtual environment
-.venv/
+.env 
+node_modules/ 
+__pycache__/ 
 venv/
-
-# Generated vector database
-Backend/app/data/vector_db/
-
-# Environment/secrets
-.env

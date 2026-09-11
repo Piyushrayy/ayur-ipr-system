@@ -207,11 +207,20 @@ console.log("Backend Citations:", data.citations);
       openPdfViewer(firstDocUrl, firstDocName, firstCite.page || 1);
     }
 
-    // 3. Append Deliberation Box
+// 3. Append Deliberation Box
+    document.getElementById(loaderId)?.remove();
+    const confidenceHtml = getConfidenceBadge(data.confidence_score || data.confidence);
+
     chatHistory.innerHTML += `
       <div class="flex justify-start w-full">
         <div class="bg-white border border-slate-200 border-l-4 border-l-[#0b3b60] rounded-lg p-5 w-full shadow-sm text-[13px] text-slate-800 leading-relaxed">
-          <p class="mb-2">${escapeHtml(data.answer)}</p>
+          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+            <span class="text-[11px] font-bold text-[#0b3b60] tracking-wider uppercase flex items-center gap-1.5">
+              <i class="fa-solid fa-scale-balanced text-[#0b3b60]"></i> STATUTORY EVALUATION VERDICT
+            </span>
+            ${confidenceHtml}
+          </div>
+          <p class="mb-2 whitespace-pre-line">${escapeHtml(data.answer)}</p>
           ${citationsHtml}
         </div>
       </div>
@@ -234,4 +243,40 @@ function escapeHtml(text) {
   const div = document.createElement("div");
   div.textContent = String(text);
   return div.innerHTML;
+}
+function getConfidenceBadge(confidence) {
+  const level = (confidence || "medium").toLowerCase();
+  
+  const config = {
+    high: {
+      label: "High Confidence",
+      bg: "bg-emerald-50",
+      text: "text-emerald-700",
+      border: "border-emerald-300",
+      icon: "fa-circle-check"
+    },
+    medium: {
+      label: "Moderate Confidence",
+      bg: "bg-amber-50",
+      text: "text-amber-700",
+      border: "border-amber-300",
+      icon: "fa-triangle-exclamation"
+    },
+    low: {
+      label: "Low Confidence (Review Required)",
+      bg: "bg-rose-50",
+      text: "text-rose-700",
+      border: "border-rose-300",
+      icon: "fa-circle-exclamation"
+    }
+  };
+
+  const badge = config[level] || config.medium;
+
+  return `
+    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${badge.bg} ${badge.text} ${badge.border} shadow-xs">
+      <i class="fa-solid ${badge.icon} text-[10px]"></i>
+      ${badge.label}
+    </span>
+  `;
 }

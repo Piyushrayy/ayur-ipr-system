@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABS Clearance Assistant | Ayur-IPR & Regulatory Decision Support System</title>
+<style>
+  :root {
+    --navy: #0f2d54;
+    --navy-dark: #0a1f3d;
+    --saffron: #d97b1f;
+    --saffron-light: #fdf1e2;
+    --green: #1f8a4c;
+    --green-light: #e8f6ec;
+    --border: #dfe3e8;
+    --bg: #f5f7fa;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a6472;
+    --white: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text-primary); line-height: 1.5; }
+
+  header.site-header {
+    background: var(--navy); color: var(--white); padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 3px solid var(--saffron);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-icon {
+    width: 34px; height: 34px; background: var(--saffron); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 16px; color: var(--navy-dark);
+  }
+  .brand-text .title { font-size: 15px; font-weight: 600; }
+  .brand-text .subtitle { font-size: 11px; color: #c9d4e3; }
+
+  .disclaimer-strip {
+    background: var(--saffron-light); border-bottom: 1px solid #f0dcb8;
+    color: #8a5a12; font-size: 12.5px; text-align: center; padding: 7px 12px;
+  }
+
+  main { max-width: 640px; margin: 40px auto; padding: 0 16px; }
+  .page-title { text-align: center; margin-bottom: 4px; font-size: 22px; font-weight: 600; color: var(--navy); }
+  .page-subtitle { text-align: center; color: var(--text-secondary); font-size: 13.5px; margin-bottom: 28px; }
+
+  .progress-wrap { margin-bottom: 24px; }
+  .progress-track { height: 6px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--saffron); border-radius: 4px; transition: width 0.3s ease; width: 0%; }
+  .progress-label { font-size: 12px; color: var(--text-secondary); margin-top: 6px; text-align: right; }
+
+  .card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .question-eyebrow {
+    font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--saffron); margin-bottom: 10px;
+  }
+  .question-text { font-size: 17px; font-weight: 500; margin-bottom: 22px; }
+  .answer-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+  .answer-btn {
+    flex: 1; min-width: 100px; padding: 12px 14px; border: 1.5px solid var(--border);
+    border-radius: 8px; background: var(--white); font-size: 14px; font-weight: 500;
+    color: var(--text-primary); cursor: pointer; transition: all 0.15s ease;
+  }
+  .answer-btn:hover { border-color: var(--navy); background: #f0f4fa; }
+  .answer-btn.unsure { color: var(--text-secondary); font-weight: 400; }
+
+  .nav-row { display: flex; justify-content: space-between; margin-top: 20px; }
+  .back-btn { background: none; border: none; color: var(--text-secondary); font-size: 13px; cursor: pointer; padding: 6px 4px; }
+  .back-btn:hover { color: var(--navy); }
+  .back-btn:disabled { visibility: hidden; }
+
+  .result-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .result-badge {
+    display: inline-block; font-size: 11.5px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.03em; background: var(--green-light); color: var(--green);
+    padding: 5px 12px; border-radius: 12px; margin-bottom: 14px;
+  }
+  .result-category { font-size: 21px; font-weight: 600; color: var(--navy); margin-bottom: 14px; }
+  .result-section { margin-bottom: 16px; }
+  .result-section-label {
+    font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+    color: var(--text-secondary); margin-bottom: 5px;
+  }
+  .result-section-text { font-size: 14px; }
+  .confidence-note {
+    font-size: 12.5px; color: #8a5a12; background: var(--saffron-light);
+    border: 1px solid #f0dcb8; padding: 8px 12px; border-radius: 6px; margin-bottom: 18px;
+  }
+
+  .checklist {
+    list-style: none; margin-top: 6px;
+  }
+  .checklist li {
+    font-size: 13.5px; padding: 6px 0 6px 24px; position: relative; color: var(--text-primary);
+  }
+  .checklist li::before {
+    content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700;
+  }
+
+  .result-actions { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--navy); color: var(--white); border: none; padding: 11px 18px;
+    border-radius: 8px; font-size: 13.5px; font-weight: 500; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--navy-dark); }
+  .btn-secondary {
+    background: var(--white); color: var(--navy); border: 1.5px solid var(--border);
+    padding: 11px 18px; border-radius: 8px; font-size: 13.5px; font-weight: 500; cursor: pointer;
+  }
+  .btn-secondary:hover { border-color: var(--navy); }
+
+  .restart-link {
+    display: block; text-align: center; margin-top: 18px; font-size: 13px;
+    color: var(--text-secondary); cursor: pointer;
+  }
+  .restart-link:hover { color: var(--navy); text-decoration: underline; }
+
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<header class="bg-[#005a9c] text-white px-5 py-2.5 border-b border-[#005a9c] flex items-center justify-between shrink-0 select-none">
+  <div class="flex items-center gap-4">
+    <a href="./IPSAKTI.HTML" class="h-8 w-8 rounded border border-slate-600 hover:border-white flex items-center justify-center text-slate-300 hover:text-white transition text-xs">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+    <div class="flex items-center gap-3">
+      <i class="fa-solid fa-scale-balanced text-[#d4af37] text-2xl"></i>
+      <div>
+        <h1 class="text-base font-bold tracking-tight leading-tight">Ayur-IPR Statutory Evaluation System</h1>
+        <p class="text-[11px] text-slate-300 font-normal">Decision Support System | Ministry of Ayush</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="disclaimer-strip">
+  This tool provides information, not legal advice. Confirm your obligations directly with the NBA or your State Biodiversity Board before proceeding.
+</div>
+
+<main>
+  <div class="page-title">ABS Clearance Assistant</div>
+  <div class="page-subtitle">Determine which Access and Benefit-Sharing pathway applies to your use of a biological resource</div>
+
+  <div id="question-flow">
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="progress-label" id="progress-label">Question 1 of 3</div>
+    </div>
+
+    <div class="card">
+      <div class="question-eyebrow" id="question-eyebrow">Step 1</div>
+      <div class="question-text" id="question-text">Loading question...</div>
+      <div class="answer-buttons">
+        <button class="answer-btn" onclick="answerCurrent(true)">Yes</button>
+        <button class="answer-btn" onclick="answerCurrent(false)">No</button>
+        <button class="answer-btn unsure" onclick="answerCurrent(null)">Not sure</button>
+      </div>
+      <div class="nav-row">
+        <button class="back-btn" id="back-btn" onclick="goBack()">&larr; Back</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-screen" class="hidden">
+    <div class="result-card">
+      <div class="result-badge">Clearance pathway identified</div>
+      <div class="result-category" id="result-category"></div>
+
+      <div class="confidence-note hidden" id="confidence-note"></div>
+
+      <div class="result-section">
+        <div class="result-section-label">Why this pathway applies</div>
+        <div class="result-section-text" id="result-reason"></div>
+      </div>
+
+      <div class="result-section">
+        <div class="result-section-label">Documentation checklist</div>
+        <ul class="checklist" id="result-checklist"></ul>
+      </div>
+
+      <div class="result-actions" id="result-actions"></div>
+    </div>
+    <div class="restart-link" onclick="restartAssistant()">Start over with a different resource</div>
+  </div>
+</main>
+
+<script>
+  /* =========================================================
+     ABS DECISION TREE
+     Reflects the 2023 Biological Diversity Act amendment:
+     Indian-owned entities routing largely through SBBs,
+     foreign-linked entities and patent-intent cases still
+     routing through the NBA.
+     ========================================================= */
+  const QUESTIONS = [
+    {
+      key: "isForeignLinked",
+      eyebrow: "Step 1 — Entity ownership",
+      text: "Does your entity have any foreign equity, management, or control — or are you a non-resident Indian / foreign entity?",
+      shortCircuitOnYes: true
+    },
+    {
+      key: "intendsPatent",
+      eyebrow: "Step 2 — Intended use",
+      text: "Do you intend to apply for a patent, IPR, or claim a research result arising from this biological resource, in India or abroad?",
+      shortCircuitOnYes: true
+    },
+    {
+      key: "isCommercial",
+      eyebrow: "Step 3 — Nature of use",
+      text: "Will the biological resource or its derivatives be used for commercial purposes — manufacturing, sale, or commercial transfer — rather than non-commercial research only?",
+      shortCircuitOnYes: true
+    }
+  ];
+
+  let currentIndex = 0;
+  let answers = {};
+  let history = [];
+  let hadUnsureAnswer = false;
+
+  function renderQuestion() {
+    const q = QUESTIONS[currentIndex];
+    document.getElementById("question-eyebrow").textContent = q.eyebrow;
+    document.getElementById("question-text").textContent = q.text;
+    document.getElementById("progress-label").textContent = "Question " + (currentIndex + 1) + " of " + QUESTIONS.length;
+    document.getElementById("progress-fill").style.width = Math.round((currentIndex / QUESTIONS.length) * 100) + "%";
+    document.getElementById("back-btn").disabled = history.length === 0;
+  }
+
+  function answerCurrent(value) {
+    const q = QUESTIONS[currentIndex];
+    if (value === null) { hadUnsureAnswer = true; value = false; }
+    answers[q.key] = value;
+    history.push(currentIndex);
+
+    if (value === true && q.shortCircuitOnYes) {
+      showResult(classifyABS(answers));
+      return;
+    }
+    currentIndex++;
+    if (currentIndex >= QUESTIONS.length) {
+      showResult(classifyABS(answers));
+    } else {
+      renderQuestion();
+    }
+  }
+
+  function goBack() {
+    if (history.length === 0) return;
+    currentIndex = history.pop();
+    delete answers[QUESTIONS[currentIndex].key];
+    renderQuestion();
+  }
+
+  function restartAssistant() {
+    currentIndex = 0; answers = {}; history = []; hadUnsureAnswer = false;
+    document.getElementById("result-screen").classList.add("hidden");
+    document.getElementById("question-flow").classList.remove("hidden");
+    renderQuestion();
+  }
+
+  function classifyABS(a) {
+    if (a.isForeignLinked) {
+      return {
+        pathway: "NBA approval required — Form I (Direct Bio-resource Access)",
+        reason: "Entities with foreign equity, management, or control — or non-resident applicants — must seek prior approval directly from the National Biodiversity Authority before accessing an Indian biological resource.",
+        checklist: [
+          "Applicant identity and ownership structure details",
+          "Description of the biological resource and its source",
+          "Intended purpose of access (research, commercial, or bio-survey)",
+          "Quantity and frequency of access required",
+          "Benefit-sharing proposal for NBA review"
+        ]
+      };
+    }
+    if (a.intendsPatent) {
+      return {
+        pathway: "NBA approval required — Form III (Pre-Patent Grant Clearance)",
+        reason: "Any applicant intending to seek IPR or a patent based on research using an Indian biological resource must obtain NBA approval before the patent is granted, regardless of ownership structure.",
+        checklist: [
+          "Patent application reference or draft specification",
+          "Description of the biological material and its role in the invention",
+          "Proof of legal access to the resource",
+          "Benefit-sharing proposal, if commercialization is intended"
+        ]
+      };
+    }
+    if (a.isCommercial) {
+      return {
+        pathway: "State Biodiversity Board (SBB) intimation required",
+        reason: "Following the 2023 amendment, Indian-owned entities using a domestically sourced biological resource for commercial purposes generally route through their State Biodiversity Board rather than the NBA.",
+        checklist: [
+          "Intimation to the relevant SBB before commercial utilization begins",
+          "Description of the resource and its source location",
+          "Details of the commercial activity involving the resource",
+          "Benefit-sharing arrangement as prescribed by the SBB"
+        ]
+      };
+    }
+    return {
+      pathway: "Generally exempted from prior approval",
+      reason: "Non-commercial research use by an Indian-owned entity, with no patent intent, is generally exempted from prior NBA or SBB approval under the current framework.",
+      checklist: [
+        "Maintain basic records of the resource accessed and its source",
+        "Re-check this classification if the purpose changes to commercial use or a patent filing is later considered"
+      ]
+    };
+  }
+
+  function showResult(result) {
+    document.getElementById("question-flow").classList.add("hidden");
+    document.getElementById("result-screen").classList.remove("hidden");
+
+    document.getElementById("result-category").textContent = result.pathway;
+    document.getElementById("result-reason").textContent = result.reason;
+
+    const confNote = document.getElementById("confidence-note");
+    if (hadUnsureAnswer) {
+      confNote.textContent = "One or more answers were marked \"Not sure.\" This result has medium confidence — please verify your entity's exact ownership and intent before proceeding.";
+      confNote.classList.remove("hidden");
+    } else {
+      confNote.classList.add("hidden");
+    }
+
+    const list = document.getElementById("result-checklist");
+    list.innerHTML = "";
+    result.checklist.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+
+    const actions = document.getElementById("result-actions");
+    actions.innerHTML = "";
+    const askBtn = document.createElement("button");
+    askBtn.className = "btn-primary";
+    askBtn.textContent = "Ask a follow-up question";
+    askBtn.onclick = function () {
+      window.location.href = "/workspace.html?mode=console&prefill=" + encodeURIComponent("Explain the ABS obligations for: " + result.pathway);
+    };
+    actions.appendChild(askBtn);
+
+    const escalateBtn = document.createElement("button");
+    escalateBtn.className = "btn-secondary";
+    escalateBtn.textContent = "Escalate to IP facilitator";
+    escalateBtn.onclick = function () {
+      window.location.href = "/ip-facilitator.html?context=" + encodeURIComponent("ABS pathway: " + result.pathway);
+    };
+    actions.appendChild(escalateBtn);
+  }
+
+  renderQuestion();
+</script>
+
+</body>
+</html>

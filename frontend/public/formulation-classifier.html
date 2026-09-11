@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulation Classifier | Ayur-IPR & Regulatory Decision Support System</title>
+<style>
+  :root {
+    --navy: #0f2d54;
+    --navy-dark: #0a1f3d;
+    --saffron: #d97b1f;
+    --saffron-light: #fdf1e2;
+    --green: #1f8a4c;
+    --green-light: #e8f6ec;
+    --border: #dfe3e8;
+    --bg: #f5f7fa;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a6472;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+
+  /* ---------- Header ---------- */
+  header.site-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--saffron);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+    background: var(--saffron);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--navy-dark);
+  }
+
+  .brand-text .title {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .brand-text .subtitle {
+    font-size: 11px;
+    color: #c9d4e3;
+  }
+
+  .jurisdiction-badge {
+    font-size: 12px;
+    background: rgba(255,255,255,0.12);
+    padding: 5px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  /* ---------- Disclaimer strip ---------- */
+  .disclaimer-strip {
+    background: var(--saffron-light);
+    border-bottom: 1px solid #f0dcb8;
+    color: #8a5a12;
+    font-size: 12.5px;
+    text-align: center;
+    padding: 7px 12px;
+  }
+
+  /* ---------- Main container ---------- */
+  main {
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+
+  .page-title {
+    text-align: center;
+    margin-bottom: 4px;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .page-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    margin-bottom: 28px;
+  }
+
+  /* ---------- Progress bar ---------- */
+  .progress-wrap {
+    margin-bottom: 24px;
+  }
+
+  .progress-track {
+    height: 6px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--saffron);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+    text-align: right;
+  }
+
+  /* ---------- Question card ---------- */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .question-eyebrow {
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--saffron);
+    margin-bottom: 10px;
+  }
+
+  .question-text {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 22px;
+  }
+
+  .answer-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .answer-btn {
+    flex: 1;
+    min-width: 100px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .answer-btn:hover {
+    border-color: var(--navy);
+    background: #f0f4fa;
+  }
+
+  .answer-btn.unsure {
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .back-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    cursor: pointer;
+    padding: 6px 4px;
+  }
+
+  .back-btn:hover { color: var(--navy); }
+  .back-btn:disabled { visibility: hidden; }
+
+  /* ---------- Result screen ---------- */
+  .result-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .result-badge {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background: var(--green-light);
+    color: var(--green);
+    padding: 5px 12px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  .result-category {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+
+  .result-section {
+    margin-bottom: 16px;
+  }
+
+  .result-section-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+  }
+
+  .result-section-text {
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+
+  .confidence-note {
+    font-size: 12.5px;
+    color: #8a5a12;
+    background: var(--saffron-light);
+    border: 1px solid #f0dcb8;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+  }
+
+  .result-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: var(--navy-dark); }
+
+  .btn-secondary {
+    background: var(--white);
+    color: var(--navy);
+    border: 1.5px solid var(--border);
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover { border-color: var(--navy); }
+
+  .restart-link {
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+
+  .restart-link:hover { color: var(--navy); text-decoration: underline; }
+
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<header class="bg-[#005a9c] text-white px-5 py-2.5 border-b border-[#005a9c] flex items-center justify-between shrink-0 select-none">
+  <div class="flex items-center gap-4">
+    <a href="./IPSAKTI.HTML" class="h-8 w-8 rounded border border-slate-600 hover:border-white flex items-center justify-center text-slate-300 hover:text-white transition text-xs">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+    <div class="flex items-center gap-3">
+      <i class="fa-solid fa-scale-balanced text-[#d4af37] text-2xl"></i>
+      <div>
+        <h1 class="text-base font-bold tracking-tight leading-tight">Ayur-IPR Statutory Evaluation System</h1>
+        <p class="text-[11px] text-slate-300 font-normal">Decision Support System | Ministry of Ayush</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="disclaimer-strip">
+  This tool provides information, not legal advice. Verify results against the original statutory text before relying on them.
+</div>
+
+<main>
+  <div class="page-title">Formulation Classifier</div>
+  <div class="page-subtitle">Answer a few questions to determine your formulation's regulatory category</div>
+
+  <!-- ===================== QUESTION FLOW ===================== -->
+  <div id="question-flow">
+    <div class="progress-wrap">
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-label" id="progress-label">Question 1 of 5</div>
+    </div>
+
+    <div class="card">
+      <div class="question-eyebrow" id="question-eyebrow">Step 1</div>
+      <div class="question-text" id="question-text">Loading question...</div>
+      <div class="answer-buttons">
+        <button class="answer-btn" onclick="answerCurrent(true)">Yes</button>
+        <button class="answer-btn" onclick="answerCurrent(false)">No</button>
+        <button class="answer-btn unsure" onclick="answerCurrent(null)">Not sure</button>
+      </div>
+      <div class="nav-row">
+        <button class="back-btn" id="back-btn" onclick="goBack()">&larr; Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== RESULT SCREEN ===================== -->
+  <div id="result-screen" class="hidden">
+    <div class="result-card">
+      <div class="result-badge" id="result-badge">Classification complete</div>
+      <div class="result-category" id="result-category"></div>
+
+      <div class="confidence-note hidden" id="confidence-note"></div>
+
+      <div class="result-section">
+        <div class="result-section-label">Why this category</div>
+        <div class="result-section-text" id="result-reason"></div>
+      </div>
+
+      <div class="result-section">
+        <div class="result-section-label">IP &amp; regulatory posture</div>
+        <div class="result-section-text" id="result-posture"></div>
+      </div>
+
+      <div class="result-actions" id="result-actions"></div>
+    </div>
+    <div class="restart-link" onclick="restartClassifier()">Start over with a different formulation</div>
+  </div>
+</main>
+
+<script>
+  /* =========================================================
+     QUESTION DEFINITIONS
+     Each question has:
+       key       - field name used by the classification logic
+       eyebrow   - short step label shown above the question
+       text      - the actual question shown to the user
+       shortCircuitOnYes - if true, answering "Yes" immediately
+                    produces a result instead of moving to the
+                    next question in the list (used for the
+                    three questions that are each independently
+                    conclusive: classical, nutraceutical, cosmetic)
+     ========================================================= */
+  const QUESTIONS = [
+    {
+      key: "firstSchedule",
+      eyebrow: "Step 1 — Classical status",
+      text: "Are the ingredients and method of preparation drawn directly from a First Schedule authoritative text (e.g. Charaka Samhita, Sushruta Samhita, Ashtanga Hridaya), without any change to the composition or method?",
+      shortCircuitOnYes: true
+    },
+    {
+      key: "isNutraceutical",
+      eyebrow: "Step 2 — Intended use",
+      text: "Is the product intended to be marketed and sold as a food, dietary supplement, or nutraceutical — rather than as a medicine making a therapeutic claim?",
+      shortCircuitOnYes: true
+    },
+    {
+      key: "isCosmetic",
+      eyebrow: "Step 3 — Intended use",
+      text: "Is the product intended for external or topical application (skin, hair, oral care, etc.) without any therapeutic or disease-related claim?",
+      shortCircuitOnYes: true
+    },
+    {
+      key: "isModifiedClassical",
+      eyebrow: "Step 4 — Modification check",
+      text: "Is the formulation based on a classical Ayurvedic formulation, but modified — for example a different ingredient ratio, an added ingredient, or a novel method of preparation or extraction?",
+      shortCircuitOnYes: true
+    },
+    {
+      key: "hasPhytoExtract",
+      eyebrow: "Step 5 — Standardization check",
+      text: "Does the formulation contain a standardized, purified phytochemical or plant extract for which safety and efficacy data (clinical or preclinical studies) has been generated?",
+      shortCircuitOnYes: true
+    }
+  ];
+
+  let currentIndex = 0;
+  let answers = {};
+  let history = []; // stack of indices visited, for the Back button
+  let hadUnsureAnswer = false;
+
+  function renderQuestion() {
+    const q = QUESTIONS[currentIndex];
+    document.getElementById("question-eyebrow").textContent = q.eyebrow;
+    document.getElementById("question-text").textContent = q.text;
+    document.getElementById("progress-label").textContent =
+      "Question " + (currentIndex + 1) + " of " + QUESTIONS.length;
+    document.getElementById("progress-fill").style.width =
+      Math.round(((currentIndex) / QUESTIONS.length) * 100) + "%";
+    document.getElementById("back-btn").disabled = history.length === 0;
+  }
+
+  function answerCurrent(value) {
+    const q = QUESTIONS[currentIndex];
+
+    if (value === null) {
+      // "Not sure" — treat as false for branching purposes,
+      // but remember it so the result can flag lower confidence
+      hadUnsureAnswer = true;
+      value = false;
+    }
+
+    answers[q.key] = value;
+    history.push(currentIndex);
+
+    // Short-circuit: a "Yes" on any of the independently
+    // conclusive questions ends the flow immediately
+    if (value === true && q.shortCircuitOnYes) {
+      showResult(classifyFormulation(answers));
+      return;
+    }
+
+    currentIndex++;
+    if (currentIndex >= QUESTIONS.length) {
+      showResult(classifyFormulation(answers));
+    } else {
+      renderQuestion();
+    }
+  }
+
+  function goBack() {
+    if (history.length === 0) return;
+    currentIndex = history.pop();
+    // clear the answer for the question being revisited
+    delete answers[QUESTIONS[currentIndex].key];
+    renderQuestion();
+  }
+
+  function restartClassifier() {
+    currentIndex = 0;
+    answers = {};
+    history = [];
+    hadUnsureAnswer = false;
+    document.getElementById("result-screen").classList.add("hidden");
+    document.getElementById("question-flow").classList.remove("hidden");
+    renderQuestion();
+  }
+
+  /* =========================================================
+     CLASSIFICATION LOGIC
+     Pure rule-based decision tree — no network call needed.
+     ========================================================= */
+  function classifyFormulation(a) {
+    if (a.firstSchedule) {
+      return {
+        category: "Classical / Generic Medicine",
+        reason: "The formulation and method match a First Schedule authoritative text without modification.",
+        posture: "This is largely regarded as traditional knowledge. It faces the Section 3(p) bar on patenting an aggregation of known properties of traditionally known components. The primary IP tool here is defensive publication through the Traditional Knowledge Digital Library (TKDL), not patent filing.",
+        nextModule: "tkdl",
+        nextLabel: "Continue to TKDL Prior-Art Scanner"
+      };
+    }
+    if (a.isNutraceutical) {
+      return {
+        category: "Ayurveda-Aahar / Nutraceutical",
+        reason: "The product is intended to be marketed as food or a dietary supplement rather than as a medicine.",
+        posture: "This pathway is governed primarily by FSSAI's Ayurveda-Aahar regulations rather than the Patents Act or Drugs and Cosmetics Act. Labeling and permitted-claim rules apply.",
+        nextModule: "guidance",
+        nextLabel: "Continue to Statutory Guidance"
+      };
+    }
+    if (a.isCosmetic) {
+      return {
+        category: "Cosmetic",
+        reason: "The product is for external or topical use and makes no therapeutic claim.",
+        posture: "Governed by the cosmetic provisions of the Drugs and Cosmetics Act. Trademark and design protection are typically more relevant here than patent protection.",
+        nextModule: "guidance",
+        nextLabel: "Continue to Statutory Guidance"
+      };
+    }
+    if (a.isModifiedClassical) {
+      return {
+        category: "Patent-or-Proprietary Medicine",
+        reason: "The formulation is derived from a classical base but has been modified — a different ratio, an added ingredient, or a novel preparation method.",
+        posture: "This may satisfy the non-obviousness requirement under Section 3(e) if a genuine synergistic effect beyond the aggregate of known properties can be demonstrated. A TKDL prior-art check is strongly recommended before filing.",
+        nextModule: "tkdl",
+        nextLabel: "Continue to TKDL Prior-Art Scanner"
+      };
+    }
+    if (a.hasPhytoExtract) {
+      return {
+        category: "Phytopharmaceutical",
+        reason: "The formulation contains a standardized, purified extract with generated safety and efficacy data.",
+        posture: "This category carries genuine patent potential, closer to a conventional new drug. It requires clinical or preclinical evidence to support any patent application.",
+        nextModule: "guidance",
+        nextLabel: "Continue to Statutory Guidance"
+      };
+    }
+    // Default fallback — none of the above matched
+    return {
+      category: "New / Non-classical Drug",
+      reason: "The formulation does not match any classical, food/cosmetic, or standardized-extract pathway.",
+      posture: "This category has full patent potential, but a patent application will need to be supported by proof of safety and effectiveness, typically through clinical evidence, before filing.",
+      nextModule: "guidance",
+      nextLabel: "Continue to Statutory Guidance"
+    };
+  }
+
+  function showResult(result) {
+    document.getElementById("question-flow").classList.add("hidden");
+    document.getElementById("result-screen").classList.remove("hidden");
+
+    document.getElementById("result-category").textContent = result.category;
+    document.getElementById("result-reason").textContent = result.reason;
+    document.getElementById("result-posture").textContent = result.posture;
+
+    const confNote = document.getElementById("confidence-note");
+    if (hadUnsureAnswer) {
+      confNote.textContent = "One or more answers were marked \"Not sure.\" This classification has medium confidence — please verify against the underlying statutory text.";
+      confNote.classList.remove("hidden");
+    } else {
+      confNote.classList.add("hidden");
+    }
+
+    const actions = document.getElementById("result-actions");
+    actions.innerHTML = "";
+
+    const primaryBtn = document.createElement("button");
+    primaryBtn.className = "btn-primary";
+    primaryBtn.textContent = result.nextLabel;
+    primaryBtn.onclick = function () {
+      // Route to the relevant module. Adjust the target URLs
+      // to match your actual routing / page structure.
+      if (result.nextModule === "tkdl") {
+        window.location.href = "workspace.html?mode=tkdl&category=" + encodeURIComponent(result.category);
+      } else {
+        window.location.href = "workspace.html?mode=console&category=" + encodeURIComponent(result.category);
+      }
+    };
+    actions.appendChild(primaryBtn);
+
+    const secondaryBtn = document.createElement("button");
+    secondaryBtn.className = "btn-secondary";
+    secondaryBtn.textContent = "Ask a follow-up question";
+    secondaryBtn.onclick = function () {
+      window.location.href = "workspace.html?mode=console&prefill=" +
+        encodeURIComponent("Explain the IP and regulatory posture for a " + result.category + " formulation");
+    };
+    actions.appendChild(secondaryBtn);
+  }
+
+  // Initial render
+  renderQuestion();
+</script>
+
+</body>
+</html>
