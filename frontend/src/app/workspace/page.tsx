@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { MOCK_WORKSPACE_DATA, Citation } from "@/lib/mockData";
+import { MOCK_WORKSPACE_DATA, Citation } from "../../lib/mockData";
 
 export default function WorkspacePage() {
   const [jurisdiction, setJurisdiction] = useState<"India" | "International">("India");
