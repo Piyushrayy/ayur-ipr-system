@@ -1,3 +1,7 @@
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+from google import genai
 from abc import ABC, abstractmethod
 import re
 from typing import Any, Dict, List
@@ -211,6 +215,88 @@ class DemoTranslationProvider(TranslationProvider):
         # A real translation provider will replace this
         # behavior.
         return text
+
+class GeminiTranslationProvider(TranslationProvider):
+    """
+    Real translation provider using Gemini.
+
+    This provider is used for production/API requests.
+    DemoTranslationProvider is still kept for deterministic tests.
+    """
+
+    def __init__(self, model_name: str = "gemini-3.5-flash"):
+        env_path = Path(__file__).resolve().parents[2] / "Backend" / ".env"
+        load_dotenv(env_path)
+        
+
+        api_key = os.getenv("GEMINI_API_KEY")
+
+        if not api_key:
+            raise RuntimeError(
+                "GEMINI_API_KEY was not found in .env"
+            )
+
+        self.client = genai.Client(api_key=api_key)
+        self.model_name = model_name
+
+    def translate(
+        self,
+        text: str,
+        source: str = "en",
+        target: str = "hi"
+    ) -> str:
+
+        if not isinstance(text, str):
+            raise TypeError("text must be a string")
+
+        if not text.strip():
+            return ""
+
+        language_names = {
+            "en": "English",
+            "hi": "Hindi"
+        }
+
+        source_name = language_names.get(
+            source.lower(),
+            source
+        )
+
+        target_name = language_names.get(
+            target.lower(),
+            target
+        )
+
+        prompt = f"""
+Translate the following text from {source_name} to {target_name}.
+
+Rules:
+1. Translate the complete text.
+2. Preserve the original meaning exactly.
+3. Do not summarize.
+4. Do not add explanations.
+5. Keep legal and technical meaning precise.
+6. Preserve names of laws, acts, databases, organizations,
+   section numbers, patent numbers, and citations when appropriate.
+7. Return only the translated text.
+
+TEXT:
+{text}
+"""
+
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt
+        )
+
+        translated = response.text
+
+        if not translated:
+            raise RuntimeError(
+                "Gemini returned an empty translation."
+            )
+
+        return translated.strip()
 
 
 # ============================================================
@@ -854,7 +940,7 @@ def translate(
     ):
 
         if provider is None:
-            provider = DemoTranslationProvider()
+            provider = GeminiTranslationProvider()
 
         translator = EnglishHindiTranslator(
             glossary_engine=glossary,
@@ -875,7 +961,7 @@ def translate(
     ):
 
         if provider is None:
-            provider = DemoTranslationProvider()
+            provider = GeminiTranslationProvider()
 
         translator = EnglishHindiTranslator(
             glossary_engine=glossary,

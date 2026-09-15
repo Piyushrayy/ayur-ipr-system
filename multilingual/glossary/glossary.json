@@ -2133,6 +2133,25 @@
     "context": "entrepreneurship",
     "explanation_en": "The first official equity funding stage of a startup, used to finance the early stages of product development and market research.",
     "explanation_hi": "किसी स्टार्टअप का पहला आधिकारिक इक्विटी फंडिंग चरण, जिसका उपयोग उत्पाद विकास और बाजार अनुसंधान के शुरुआती चरणों को वित्तपोषित करने के लिए किया जाता है।"
-  }
+  }, 
 
+{
+  "term_id": "PAT_0131",
+  "category": "TRADITIONAL_KNOWLEDGE",
+  "english": "Traditional Knowledge",
+  "hindi": "पारंपरिक ज्ञान",
+  "aliases_en": [
+    "Traditional Know-how",
+    "Indigenous Knowledge",
+    "TK"
+  ],
+  "aliases_hi": [
+    "परंपरागत ज्ञान",
+    "देशज ज्ञान"
+  ],
+  "do_not_translate": false,
+  "context": "knowledge, practices, skills, and traditions developed and maintained by communities and passed from generation to generation",
+  "explanation_en": "Knowledge, practices, and traditions developed and maintained by communities over generations.",
+  "explanation_hi": "पीढ़ियों से समुदायों द्वारा विकसित और संरक्षित ज्ञान, प्रथाएँ और परंपराएँ।"
+}
 ]
